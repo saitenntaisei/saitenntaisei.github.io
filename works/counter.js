@@ -1,12 +1,14 @@
 let count = 0
 const countUp = () => {
   count++
-  viewcounter();
+  viewcount()
+ 
 }
 
 const reset=()=>{
-  count=0;
-  viewcounter();
+  count=0
+  viewcount()
+  
 }
 
 function viewcount () {
