@@ -2,7 +2,7 @@ import "./App.css";
 
 function Header() {
   return (
-    <div className="shadow-md  flex justify-center">
+    <div className="shadow-md  flex justify-center w-full">
       <h1 className="text-black	 text-5xl	 font-mono	 m-7">
         <span>saiten's Portfolio</span>
       </h1>
