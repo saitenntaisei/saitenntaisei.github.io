@@ -20,12 +20,14 @@ function Section({ sectionTitle }) {
 }
 function Itroduction() {
   return (
-    <div className="flex justify-center items-center">
-      <img
-        className="object-contain w-64 h-64  relative"
-        src="saiten.png"
-        alt="icon"
-      />
+    <div className="flex justify-center flex-wrap">
+      <div>
+        <img
+          className="object-contain w-64 h-64  relative"
+          src="saiten.png"
+          alt="icon"
+        />
+      </div>
       <div className="text-black text-2xl font-semibold font-mono text-left shadow-md border border-gray-200	 rounded">
         <ul className="list-disc list-inside m-5">
           <li>saiten</li>
