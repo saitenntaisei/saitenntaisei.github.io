@@ -4,7 +4,7 @@ function Header() {
   return (
     <div className="shadow-md  flex justify-center w-full">
       <h1 className="text-black	 dark:text-slate-400 text-5xl	 font-mono	 m-7">
-        <span>saiten's Portfolio</span>
+        <span>This is saiten's Portfolio</span>
       </h1>
     </div>
   );
