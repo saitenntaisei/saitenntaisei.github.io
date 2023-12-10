@@ -3,7 +3,7 @@ import "./App.css";
 function Header() {
   return (
     <div className="shadow-md  flex justify-center w-full">
-      <h1 className="text-black	 text-5xl	 font-mono	 m-7">
+      <h1 className="text-black	 dark:text-slate-400 text-5xl	 font-mono	 m-7">
         <span>saiten's Portfolio</span>
       </h1>
     </div>
@@ -12,7 +12,7 @@ function Header() {
 function Section({ sectionTitle }) {
   return (
     <div>
-      <h1 className="text-black text-center text-4xl font-medium font-mono underline m-7 ">
+      <h1 className="text-black  dark:text-slate-400  text-center text-4xl font-medium font-mono underline m-7 ">
         <span>{sectionTitle}</span>
       </h1>
     </div>
@@ -23,12 +23,12 @@ function Itroduction() {
     <div className="flex justify-center flex-wrap">
       <div>
         <img
-          className="object-contain w-64 h-64  relative"
+          className="object-contain w-64 h-64  relative rounded-full"
           src="saiten.png"
           alt="icon"
         />
       </div>
-      <div className="text-black text-2xl font-semibold font-mono text-left shadow-md border border-gray-200	 rounded">
+      <div className="text-black dark:text-slate-400 text-2xl font-semibold font-mono text-left shadow-md border border-gray-200	 rounded mx-10">
         <ul className="list-disc list-inside m-5">
           <li>saiten</li>
           <li>
@@ -54,7 +54,7 @@ function Itroduction() {
 function WorkedList() {
   return (
     <div className="flex justify-center items-center">
-      <div className="text-black text-2xl font-semibold font-mono text-left shadow-inner border	 rounded">
+      <div className="text-black dark:text-slate-400 text-2xl font-semibold font-mono text-left shadow-inner border	 rounded">
         <ul className="mx-20 my-7 list-disc list-inside">
           <li> pixiv 2022.4-2022.10</li>
           <li>DeNA 2023.9 (3 days)</li>
@@ -94,7 +94,7 @@ function Links() {
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-white dark:bg-slate-800 h-screen">
       <header className="">
         <Header />
       </header>
