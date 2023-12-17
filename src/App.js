@@ -94,7 +94,7 @@ function Links() {
 
 function App() {
   return (
-    <div className="App bg-white dark:bg-slate-800 h-fit">
+    <div className="App bg-white dark:bg-slate-800 min-h-screen h-fit">
       <header className="">
         <Header />
       </header>
