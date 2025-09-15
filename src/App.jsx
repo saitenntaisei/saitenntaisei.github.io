@@ -59,6 +59,8 @@ function WorkedList() {
           <li>pixiv 2022.4-2022.10</li>
           <li>DeNA 2023.9 (3 days)</li>
           <li>Wantedly 2023.9 (3 weeks)</li>
+          <li>FixStars 2025.3 (3 weeks)</li>
+          <li>M3 2025.8 (2 weeks)</li>
         </ul>
       </div>
     </div>
