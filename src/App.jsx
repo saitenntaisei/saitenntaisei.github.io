@@ -24,7 +24,7 @@ function Itroduction() {
       <div>
         <img
           className="object-contain w-64 h-64  relative rounded-full"
-          src="saiten.png"
+          src="/saiten.png"
           alt="icon"
         />
       </div>
@@ -70,21 +70,21 @@ function Links() {
       <a href="https://twitter.com/sort_reverse">
         <img
           className="object-contain w-10 h-10  relative"
-          src="x.png"
+          src="/x.png"
           alt="Twitter"
         />
       </a>
       <a href="https://github.com/saitenntaisei">
         <img
           className="object-contain w-10 h-10  relative"
-          src="github.png"
+          src="/github.png"
           alt="github"
         />
       </a>
       <a href="https://qiita.com/saitenntaisei">
         <img
           className="object-contain w-10 h-10  relative"
-          src="qiita.png"
+          src="/qiita.png"
           alt="qiita"
         />
       </a>
