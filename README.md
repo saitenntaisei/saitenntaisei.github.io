@@ -1,37 +1,34 @@
 # saitenntaisei.github.io
 
-Vite + React portfolio site deployed to GitHub Pages (user site). The production build is emitted to `docs/`.
+Next.js (App Router) portfolio site deployed to GitHub Pages (user site). The production static export is emitted to `docs/`.
 
 ## Quick Start
 - Install: `npm install`
-- Dev server: `npm run dev` then open `http://localhost:5173`
-- Tests: `npm test`
-- Build: `npm run build` (outputs to `docs/`)
-- Preview production: `npm run preview`
+- Dev server: `npm run dev` then open `http://localhost:3000`
+- Tests: `npm test` (Jest + Testing Library)
+- Build + export: `npm run build` (outputs static files to `docs/`)
 
 ## Project Structure
-- `src/` React source code and tests
-  - `src/main.jsx` app entry
-  - `src/App.jsx` main component
-  - `src/App.test.jsx` example Vitest test
+- `app/` App Router entry points
+  - `app/layout.jsx` root layout and global CSS
+  - `app/page.jsx` home page (client component)
+  - `app/page.test.jsx` example Jest test
 - `public/` static files copied as-is (e.g., `github.png`, `x.png`)
-- `index.html` Vite HTML entry
-- `docs/` build output served by GitHub Pages
-- `vite.config.js` Vite configuration (build to `docs/`)
+- `docs/` static export served by GitHub Pages (do not edit)
+- `next.config.js` Next.js config (`output: 'export'` for static HTML)
 - `tailwind.config.js`, `postcss.config.js` Tailwind + PostCSS
 
 ## Scripts
-- `npm run dev` start Vite with HMR
-- `npm test` run Vitest + Testing Library (jsdom)
-- `npm run build` production build to `docs/`
-- `npm run preview` local preview of the build
+- `npm run dev` run Next.js dev server
+- `npm test` run Jest + Testing Library
+- `npm run build` build and static export to `docs/`
 - `npm run deploy` build and push `docs/` to `master`
 
 ## Styling
-Tailwind CSS utility classes are used in components. Edit `tailwind.config.js` `content` globs if you add new file types/paths so unused styles are purged correctly.
+Tailwind CSS utility classes are used across components. If you add new directories or file types, update `tailwind.config.js` `content` globs so unused styles are purged correctly.
 
 ## Deployment (GitHub Pages)
-This repo is configured as a user site (`saitenntaisei.github.io`) and serves from the `docs/` folder on the `master` branch. To publish a new version:
+This is a user site (`saitenntaisei.github.io`) that serves from `docs/` on `master`. The project uses Next.js static export via `output: 'export'`—avoid server-only features (e.g., Route Handlers, dynamic server rendering). To publish:
 
 1. `npm run build`
 2. `npm run deploy`

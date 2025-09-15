@@ -1,41 +1,33 @@
-# Repository Guidelines
+# Contributor Guide
 
-This repository hosts a Vite + React site published via GitHub Pages. Use this guide to develop, test, and deploy changes safely and consistently.
+This repository hosts a Next.js (App Router) portfolio deployed via GitHub Pages. Follow these guidelines to develop, test, and deploy changes consistently.
 
-## Project Structure & Module Organization
-- `src/` React source (components, styles, tests). Example: `src/App.js`, `src/App.test.js`.
-- `public/` Static assets copied as-is to the build.
-- `docs/` Built site output for GitHub Pages. Do not edit by hand.
-- `tailwind.config.js` Tailwind setup; scans `./index.html` and `./src/**/*`.
-- `package.json` Scripts and dependencies; Vite config in `vite.config.js`.
+## Project Layout
+- `app/` App Router entrypoints: `layout.jsx` (root shell), `page.jsx` (home), co-located tests.
+- `public/` Static assets (e.g., `github.png`, `x.png`, `saiten.png`) served from `/`.
+- `docs/` Static export for GitHub Pages. Do not edit manually.
+- Config: `next.config.js` (uses `output: 'export'`), `tailwind.config.js`, `postcss.config.js`, `jest.config.mjs`.
 
-## Build, Test, and Development Commands
-- `npm run dev` Run Vite dev server with fast HMR.
-- `npm test` Run Vitest + Testing Library in watch mode.
-- `npm run build` Produce production build into `docs/` (served by Pages).
-- `npm run preview` Preview the production build locally.
-- `npm run deploy` Build into `docs/`, commit, and push to `master`.
+## Commands
+- `npm run dev` Start Next.js dev server (port 3000).
+- `npm test` Run Jest + React Testing Library (jsdom).
+- `npm run build` Build and statically export to `docs/`.
+- `npm run deploy` Build, commit `docs/`, and push to `master`.
 
-## Coding Style & Naming Conventions
-- JavaScript/React with functional components; prefer PascalCase for components (e.g., `Header`, `UserCard`).
-- Files: one component per file; consider `ComponentName.js(x)` when adding new ones.
-- Indentation: 2 spaces; always use semicolons; prefer double quotes in JS to match current files.
-- Styling: Tailwind CSS utilities in `className`. Keep custom CSS minimal in `src/*.css`.
-- Linting: Use common React/JS best practices; keep components small and typed via JSDoc if helpful. Address any linter warnings if present.
+## Coding Conventions
+- Components: functional, PascalCase filenames (`Header.jsx`). Keep client/server boundaries clear; pages default to server components—add `"use client"` when client APIs or hooks are needed.
+- Styling: Tailwind CSS utilities in `className`. If you add new folders or file types, update `tailwind.config.js` `content` globs so purge works.
+- Imports: Prefer absolute imports from app/components if you introduce them; keep public asset paths absolute (e.g., `/github.png`) so they work on Pages root.
 
-## Testing Guidelines
-- Frameworks: Vitest + React Testing Library (`jsdom` env).
-- Location: co-locate as `*.test.js(x)` in `src/` (e.g., `src/MyComponent.test.jsx`).
-- Scope: cover rendering, user interactions, and accessibility roles. Add tests for new components/behaviors.
-- Run: `npm test` locally before opening a PR.
+## Testing
+- Use Jest with Testing Library. Co-locate tests near the component/page as `*.test.jsx`.
+- Test rendering, roles, and core interactions. Avoid coupling to implementation details.
 
-## Commit & Pull Request Guidelines
-- Commit style: concise, imperative, emoji prefix common in history, e.g.:
-  - `:sparkles: Add dark mode toggle`
-  - `:bug: Fix mobile layout overflow`
-  - `:arrow_up: Bump dependency xyz`
-- Pull requests: include a clear description, linked issues, and UI screenshots/GIFs when visual changes occur. Ensure `npm build` succeeds. Do not commit changes directly under `docs/`; use `npm run deploy` after merge.
+## PRs & Deploys
+- Keep commits concise and imperative (emoji prefix is fine): `:sparkles: Add Projects section`.
+- Open PRs with clear descriptions and screenshots for visual changes.
+- Never edit `docs/` directly; always `npm run build` then `npm run deploy`.
 
-## Security & Configuration Tips
-- Never commit secrets; this is a public Pages site. `homepage` and Pages point to `docs/`—verify deploys on `master` only.
-- Adding new file types or paths? Update `tailwind.config.js` `content` so classes are detected.
+## Notes for GitHub Pages
+- This is a user site (`saitenntaisei.github.io`) published from `docs/` on `master`.
+- Static export requires avoiding server-only features (e.g., Route Handlers, dynamic rendering). Stick to static/client components for pages.
