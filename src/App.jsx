@@ -35,7 +35,7 @@ function Itroduction() {
             Status
             <ul className="list-disc list-inside ml-7">
               <li>Tokyo Institute of Technology</li>
-              <li>B3</li>
+              <li>M1</li>
             </ul>
           </li>
           <li>
@@ -56,7 +56,7 @@ function WorkedList() {
     <div className="flex justify-center items-center">
       <div className="text-black dark:text-slate-400 text-2xl font-semibold font-mono text-left shadow-inner border	 rounded">
         <ul className="mx-20 my-7 list-disc list-inside">
-          <li> pixiv 2022.4-2022.10</li>
+          <li>pixiv 2022.4-2022.10</li>
           <li>DeNA 2023.9 (3 days)</li>
           <li>Wantedly 2023.9 (3 weeks)</li>
         </ul>
