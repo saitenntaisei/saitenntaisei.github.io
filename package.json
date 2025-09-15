@@ -13,6 +13,8 @@
     "build": "next build && rm -rf docs && mv out docs",
     "start": "next start",
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --ci",
     "deploy": "npm run build && git add docs && git commit -m ':rocket: Deploy' && git push origin master"
   },
   "browserslist": {
@@ -34,6 +36,7 @@
     "autoprefixer": "^10.4.20",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "identity-obj-proxy": "^3.0.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.10"
   }
