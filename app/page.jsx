@@ -5,7 +5,7 @@ import Image from 'next/image';
 function Header() {
   return (
     <div className="shadow-md  flex justify-center w-full">
-      <h1 className="text-black\t dark:text-slate-400 text-5xl\t font-mono\t m-7">
+      <h1 className="text-black dark:text-slate-400 text-5xl font-mono m-7">
         <span>This is saiten's Portfolio</span>
       </h1>
     </div>
