@@ -10,12 +10,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && rm -rf docs && mv out docs",
+    "build": "next build && rm -rf docs && mv out docs && touch docs/.nojekyll",
     "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci",
-    "deploy": "npm run build && git add docs && git commit -m ':rocket: Deploy' && git push origin master"
+    "deploy": "BR=$(git rev-parse --abbrev-ref HEAD); if [ \"$BR\" != \"main\" ]; then echo 'Please run deploy from \"main\" (current: ' \"$BR\" ')'; exit 1; fi; npm run build && git add docs && git commit -m ':rocket: Deploy' || echo 'No changes to commit' && git push origin main"
   },
   "browserslist": {
     "production": [

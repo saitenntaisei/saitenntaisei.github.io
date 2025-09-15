@@ -12,7 +12,7 @@ This repository hosts a Next.js (App Router) portfolio deployed via GitHub Pages
 - `npm run dev` Start Next.js dev server (port 3000).
 - `npm test` Run Jest + React Testing Library (jsdom).
 - `npm run build` Build and statically export to `docs/`.
-- `npm run deploy` Build, commit `docs/`, and push to `master`.
+- `npm run deploy` Build, commit `docs/`, and push to `main`.
 
 ## Coding Conventions
 - Components: functional, PascalCase filenames (`Header.jsx`). Keep client/server boundaries clear; pages default to server components—add `"use client"` when client APIs or hooks are needed.
@@ -29,5 +29,5 @@ This repository hosts a Next.js (App Router) portfolio deployed via GitHub Pages
 - Never edit `docs/` directly; always `npm run build` then `npm run deploy`.
 
 ## Notes for GitHub Pages
-- This is a user site (`saitenntaisei.github.io`) published from `docs/` on `master`.
+- This is a user site (`saitenntaisei.github.io`) published from `docs/` on `main`.
 - Static export requires avoiding server-only features (e.g., Route Handlers, dynamic rendering). Stick to static/client components for pages.

@@ -22,13 +22,13 @@ Next.js (App Router) portfolio site deployed to GitHub Pages (user site). The pr
 - `npm run dev` run Next.js dev server
 - `npm test` run Jest + Testing Library
 - `npm run build` build and static export to `docs/`
-- `npm run deploy` build and push `docs/` to `master`
+- `npm run deploy` build and push `docs/` to `main`
 
 ## Styling
 Tailwind CSS utility classes are used across components. If you add new directories or file types, update `tailwind.config.js` `content` globs so unused styles are purged correctly.
 
 ## Deployment (GitHub Pages)
-This is a user site (`saitenntaisei.github.io`) that serves from `docs/` on `master`. The project uses Next.js static export via `output: 'export'`—avoid server-only features (e.g., Route Handlers, dynamic server rendering). To publish:
+This is a user site (`saitenntaisei.github.io`) that serves from `docs/` on `main`. The project uses Next.js static export via `output: 'export'`—avoid server-only features (e.g., Route Handlers, dynamic server rendering). To publish:
 
 1. `npm run build`
 2. `npm run deploy`
