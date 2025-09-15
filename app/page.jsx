@@ -33,7 +33,7 @@ function Itroduction() {
           alt="icon"
         />
       </div>
-      <div className="text-black dark:text-slate-400 text-2xl font-semibold font-mono text-left shadow-md border border-gray-200\t rounded mx-10">
+      <div className="text-black dark:text-slate-400 text-2xl font-semibold font-mono text-left shadow-md border border-gray-200 rounded mx-10">
         <ul className="list-disc list-inside m-5">
           <li>saiten</li>
           <li>
