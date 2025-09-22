@@ -175,7 +175,7 @@ function App() {
               route === "projects" ? "font-semibold" : ""
             }`}
           >
-            Personal Project
+            Personal Projects
           </a>
         </nav>
       </div>
