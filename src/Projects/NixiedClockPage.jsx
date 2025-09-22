@@ -65,7 +65,7 @@ export default function NixiedClockPage() {
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <a
               className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-slate-700/40 hover:bg-emerald-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-300"
-              href="https://github.com/saitenntaisei/project-b"
+              href="https://github.com/saitenntaisei/nixiecontrol"
               target="_blank"
               rel="noreferrer"
             >
@@ -74,7 +74,7 @@ export default function NixiedClockPage() {
             </a>
             <a
               className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-slate-700/40 hover:bg-emerald-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-300"
-              href="#"
+              href="https://github.com/saitenntaisei/nixie9v"
               target="_blank"
               rel="noreferrer"
             >
