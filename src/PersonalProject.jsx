@@ -1,4 +1,6 @@
 import React from "react";
+import ProjectA from "./ProjectA.jsx";
+import ProjectB from "./ProjectB.jsx";
 
 function PersonalProject() {
   return (
@@ -11,18 +13,13 @@ function PersonalProject() {
           Here are some of my personal projects. This section can feature
           descriptions, screenshots, and links to repositories or live demos.
         </p>
-        <ul className="mt-6 space-y-4 list-disc list-inside text-black dark:text-slate-300">
-          <li>
-            Project A — Short description and a link to the repo/demo.
-          </li>
-          <li>
-            Project B — Short description and a link to the repo/demo.
-          </li>
-        </ul>
+      </div>
+      <div className="w-full flex flex-col items-center mt-4">
+        <ProjectA />
+        <ProjectB />
       </div>
     </div>
   );
 }
 
 export default PersonalProject;
-
