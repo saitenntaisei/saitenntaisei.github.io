@@ -1,6 +1,6 @@
 import React from "react";
-import VFDGPSClockPage from "./VFDGPSClockPage.jsx";
-import NixiedClockPage from "./NixiedClockPage.jsx";
+import VFDGPSClockPage from "./Projects/VFDGPSClockPage.jsx";
+import NixiedClockPage from "./Projects/NixiedClockPage.jsx";
 
 function PersonalProject() {
   return (
