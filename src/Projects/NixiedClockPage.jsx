@@ -43,7 +43,7 @@ export default function NixiedClockPage() {
         >
           <video
             ref={videoRef}
-            src="material/nixie.mp4"
+            src="/material/nixie.mp4"
             title="Preview of Project B"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90"
             style={{ height: containerWidth ? `${containerWidth}px` : undefined, width: "auto" }}
@@ -70,7 +70,7 @@ export default function NixiedClockPage() {
               rel="noreferrer"
             >
               Repo (Software)
-              <img src="logo/oss.png" alt="Open Source Software" className="w-4 h-4" />
+              <img src="/logo/oss.png" alt="Open Source Software" className="w-4 h-4" />
             </a>
             <a
               className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-slate-700/40 hover:bg-emerald-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-300"
@@ -79,7 +79,7 @@ export default function NixiedClockPage() {
               rel="noreferrer"
             >
               Repo (Hardware)
-              <img src="logo/oshw.png" alt="Open Source Hardware" className="w-4 h-4" />
+              <img src="/logo/oshw.png" alt="Open Source Hardware" className="w-4 h-4" />
             </a>
           </div>
         </div>
