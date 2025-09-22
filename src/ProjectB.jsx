@@ -1,21 +1,60 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function ProjectB() {
+  const containerRef = useRef(null);
+  const videoRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [containerHeight, setContainerHeight] = useState(0);
+
+  useEffect(() => {
+    function measure() {
+      if (containerRef.current) {
+        const w = containerRef.current.clientWidth;
+        setContainerWidth(w);
+        // If we know intrinsic video size, compute rotated height
+        const v = videoRef.current;
+        if (v && v.videoWidth && v.videoHeight) {
+          const rotatedHeight = w * (v.videoWidth / v.videoHeight);
+          setContainerHeight(rotatedHeight);
+        }
+      }
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  function handleLoadedMetadata() {
+    // Recompute container height when metadata is ready
+    const v = videoRef.current;
+    const w = containerRef.current?.clientWidth || 0;
+    if (v && v.videoWidth && v.videoHeight && w) {
+      setContainerHeight(w * (v.videoWidth / v.videoHeight));
+    }
+  }
+
   return (
     <article className="w-full max-w-3xl my-6 overflow-hidden rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow">
-      <div className="md:flex md:items-stretch">
-        <div className="md:w-5/12 order-last md:order-first">
+      <div className="flex flex-col">
+        <div
+          ref={containerRef}
+          className="relative w-full"
+          style={{ height: containerHeight ? `${containerHeight}px` : undefined }}
+        >
           <video
+            ref={videoRef}
             src="material/nixie.mp4"
             title="Preview of Project B"
-            className="w-full h-48 md:h-full object-cover"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90"
+            style={{ height: containerWidth ? `${containerWidth}px` : undefined, width: "auto" }}
             autoPlay
             loop
             muted
             playsInline
+            onLoadedMetadata={handleLoadedMetadata}
           />
         </div>
-        <div className="p-6 md:w-7/12">
+        <div className="p-6 w-full">
           <h2 className="text-2xl font-mono font-semibold text-black dark:text-slate-100">
             Project B — Example Title
           </h2>
