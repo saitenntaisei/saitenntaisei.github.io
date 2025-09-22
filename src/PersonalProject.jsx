@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectA from "./ProjectA.jsx";
-import ProjectB from "./ProjectB.jsx";
+import VFDGPSClockPage from "./VFDGPSClockPage.jsx";
+import NixiedClockPage from "./NixiedClockPage.jsx";
 
 function PersonalProject() {
   return (
@@ -15,8 +15,8 @@ function PersonalProject() {
         </p>
       </div>
       <div className="w-full flex flex-col items-center mt-4">
-        <ProjectA />
-        <ProjectB />
+        <VFDGPSClockPage />
+        <NixiedClockPage />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProjectA() {
+export default function VFDGPSClockPage() {
   return (
     <article className="w-full max-w-3xl my-6 overflow-hidden rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow">
       <div className="md:flex md:items-stretch md:h-80">

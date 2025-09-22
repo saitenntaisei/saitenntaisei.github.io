@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export default function ProjectB() {
+export default function NixiedClockPage() {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
