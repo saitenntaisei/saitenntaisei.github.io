@@ -72,7 +72,7 @@ function WorkedList() {
 function Links() {
   return (
     <div className="flex justify-center items-center space-x-10">
-      <a href="https://twitter.com/sort_reverse">
+      <a href="https://twitter.com/saitenntaisei">
         <img
           className="object-contain w-10 h-10  relative"
           src="/x.png"
