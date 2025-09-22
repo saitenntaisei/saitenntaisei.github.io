@@ -13,38 +13,29 @@ export default function ProjectA() {
         </div>
         <div className="p-6 md:w-6/12">
           <h2 className="text-2xl font-mono font-semibold text-black dark:text-slate-100">
-            Project A — Example Title
+            VFD Tube GPS Clock
           </h2>
           <p className="mt-3 text-black dark:text-slate-300 leading-7">
-            Project A is a showcase example of a modern, user‑centric
-            application focused on clarity, performance, and maintainability.
-            The project demonstrates how to design a clean component
-            architecture, handle state predictably, and compose accessible UI.
+            VFD TUBE, RP2040. GPS Available. I will write detail description later...
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <a
-              className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-slate-700/40 hover:bg-emerald-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-300"
               href="https://github.com/saitenntaisei/project-a"
               target="_blank"
               rel="noreferrer"
             >
-              Repo
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                <path d="M12.293 2.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1-1.414 1.414L14 5.414V12a1 1 0 1 1-2 0V5.414L9.707 7.707A1 1 0 0 1 8.293 6.293l4-4z" />
-                <path d="M3 9a1 1 0 0 1 1 1v5h12v-5a1 1 0 1 1 2 0v6a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1z" />
-              </svg>
+              Repo (Software)
+              <img src="logo/oss.png" alt="Open Source Software" className="w-4 h-4" />
             </a>
             <a
-              className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-slate-700/40 hover:bg-blue-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-              href="https://example.com/project-a-demo"
+              className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-slate-700/40 hover:bg-emerald-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-300"
+              href="#"
               target="_blank"
               rel="noreferrer"
             >
-              Live Demo
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                <path fillRule="evenodd" d="M12.293 2.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1-1.414 1.414L14 5.414 9.707 9.707a1 1 0 1 1-1.414-1.414L12.586 4 10.5 1.914a1 1 0 1 1 1.414-1.414l.379.379z" clipRule="evenodd" />
-                <path d="M3 5a2 2 0 0 1 2-2h4a1 1 0 1 1 0 2H5v10h10v-4a1 1 0 1 1 2 0v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5z" />
-              </svg>
+              Repo (Hardware)
+              <img src="logo/oshw.png" alt="Open Source Hardware" className="w-4 h-4" />
             </a>
           </div>
         </div>
