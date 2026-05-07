@@ -47,3 +47,6 @@ coverage
 
 # OS-specific
 Thumbs.db
+
+# Superpowers brainstorming companion
+.superpowers/
