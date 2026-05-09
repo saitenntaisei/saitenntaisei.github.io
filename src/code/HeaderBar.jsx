@@ -2,7 +2,7 @@ import React from "react";
 import StickyHeader from "./StickyHeader.jsx";
 import Token from "./Token.jsx";
 
-const ITEMS = ["history", "projects", "links"];
+const ITEMS = ["projects", "links"];
 
 export default function HeaderBar() {
   return (

@@ -87,48 +87,34 @@ export default function HomeFile() {
         <Line n={24}>{"};"}</Line>
         <Line n={25} />
 
-        {/* history */}
-        <Line n={26} id="L-history">
-          <Token kind="kw">void</Token>{" "}
-          <Token kind="fn">history</Token>(){" {"}
-        </Line>
-        {HISTORY.map((row, i) => (
-          <Line key={row.company} n={27 + i}>
-            {"  "}
-            <Token kind="cm">{`// ${row.company}: ${row.period}`}</Token>
-          </Line>
-        ))}
-        <Line n={32}>{"}"}</Line>
-        <Line n={33} />
-
         {/* projects */}
-        <Line n={34} id="L-projects">
+        <Line n={26} id="L-projects">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">projects</Token>(){" {"}
         </Line>
-        <Line n={35}>
+        <Line n={27}>
           {"  "}
           <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="fn">vfd_gps_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={36}>
+        <Line n={28}>
           {"  "}
           <a href="#/projects/nixied-clock" className="hover:underline">
             <Token kind="fn">nixied_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={37}>{"}"}</Line>
-        <Line n={38} />
+        <Line n={29}>{"}"}</Line>
+        <Line n={30} />
 
         {/* links */}
-        <Line n={39} id="L-links">
+        <Line n={31} id="L-links">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">links</Token>(){" {"}
         </Line>
-        <Line n={40}>
+        <Line n={32}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://twitter.com/saitenntaisei"
@@ -141,7 +127,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={41}>
+        <Line n={33}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://github.com/saitenntaisei"
@@ -153,7 +139,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={42}>
+        <Line n={34}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://qiita.com/saitenntaisei"
@@ -166,7 +152,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={43}>{"}"}</Line>
+        <Line n={35}>{"}"}</Line>
       </div>
     </CodeShell>
   );
