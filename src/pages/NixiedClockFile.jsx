@@ -3,6 +3,7 @@ import CodeShell from "../code/CodeShell.jsx";
 import StickyHeader from "../code/StickyHeader.jsx";
 import Line from "../code/Line.jsx";
 import Token from "../code/Token.jsx";
+import Footer from "../code/Footer.jsx";
 
 export default function NixiedClockFile() {
   return (
@@ -78,6 +79,7 @@ export default function NixiedClockFile() {
         </Line>
         <Line n={13}>{"}"}</Line>
       </div>
+      <Footer />
     </CodeShell>
   );
 }

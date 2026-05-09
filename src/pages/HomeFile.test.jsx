@@ -3,13 +3,11 @@ import { describe, it, expect } from "vitest";
 import HomeFile from "./HomeFile.jsx";
 
 describe("HomeFile", () => {
-  it("renders the sticky header bar with two void links", () => {
+  it("renders the sticky header bar with the projects link", () => {
     render(<HomeFile />);
-    for (const name of ["projects", "links"]) {
-      expect(
-        screen.getByRole("link", { name: new RegExp(`^${name}$`) })
-      ).toHaveAttribute("href", `#L-${name}`);
-    }
+    expect(
+      screen.getByRole("link", { name: /^projects$/ })
+    ).toHaveAttribute("href", "#L-projects");
   });
 
   it("renders profile struct fields", () => {
@@ -22,7 +20,7 @@ describe("HomeFile", () => {
 
   it("provides scroll anchors for each header destination", () => {
     render(<HomeFile />);
-    for (const id of ["L-projects", "L-links"]) {
+    for (const id of ["L-projects"]) {
       expect(document.getElementById(id)).not.toBeNull();
     }
   });
@@ -37,14 +35,19 @@ describe("HomeFile", () => {
     ).toHaveAttribute("href", "#/projects/nixied-clock");
   });
 
-  it("links to external profiles (twitter / github / qiita)", () => {
+  it("renders the footer with social links", () => {
     render(<HomeFile />);
-    expect(screen.getByRole("link", { name: /twitter/i })).toHaveAttribute(
+    // The footer (rendered via <Footer />) carries the external profile
+    // links now that void links() is gone from the file body.
+    expect(screen.getByRole("link", { name: /X \/ Twitter/ })).toHaveAttribute(
       "href",
       "https://twitter.com/saitenntaisei"
     );
-    expect(screen.getByRole("link", { name: /github\.com\/saitenntaisei/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /qiita/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /GitHub/ })).toHaveAttribute(
+      "href",
+      "https://github.com/saitenntaisei"
+    );
+    expect(screen.getByRole("link", { name: /Qiita/ })).toHaveAttribute(
       "href",
       "https://qiita.com/saitenntaisei"
     );

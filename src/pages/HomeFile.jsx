@@ -3,6 +3,7 @@ import CodeShell from "../code/CodeShell.jsx";
 import HeaderBar from "../code/HeaderBar.jsx";
 import Line from "../code/Line.jsx";
 import Token from "../code/Token.jsx";
+import Footer from "../code/Footer.jsx";
 
 const HISTORY = [
   { company: "pixiv",    period: "2022.4 — 2022.10" },
@@ -107,53 +108,8 @@ export default function HomeFile() {
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
         <Line n={29}>{"}"}</Line>
-        <Line n={30} />
-
-        {/* links */}
-        <Line n={31} id="L-links">
-          <Token kind="kw">void</Token>{" "}
-          <Token kind="fn">links</Token>(){" {"}
-        </Line>
-        <Line n={32}>
-          {"  "}<Token kind="fn">open</Token>(
-          <a
-            href="https://twitter.com/saitenntaisei"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:underline"
-            aria-label="twitter"
-          >
-            <Token kind="st">"https://twitter.com/saitenntaisei"</Token>
-          </a>
-          );
-        </Line>
-        <Line n={33}>
-          {"  "}<Token kind="fn">open</Token>(
-          <a
-            href="https://github.com/saitenntaisei"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:underline"
-          >
-            <Token kind="st">"https://github.com/saitenntaisei"</Token>
-          </a>
-          );
-        </Line>
-        <Line n={34}>
-          {"  "}<Token kind="fn">open</Token>(
-          <a
-            href="https://qiita.com/saitenntaisei"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:underline"
-            aria-label="qiita"
-          >
-            <Token kind="st">"https://qiita.com/saitenntaisei"</Token>
-          </a>
-          );
-        </Line>
-        <Line n={35}>{"}"}</Line>
       </div>
+      <Footer />
     </CodeShell>
   );
 }

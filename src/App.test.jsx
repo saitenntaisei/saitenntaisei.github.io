@@ -8,13 +8,11 @@ describe("App", () => {
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   });
 
-  it("renders HomeFile by default with all two header links", () => {
+  it("renders HomeFile by default with the projects header link", () => {
     render(<App />);
-    for (const name of ["projects", "links"]) {
-      expect(
-        screen.getByRole("link", { name: new RegExp(`^${name}$`) })
-      ).toBeInTheDocument();
-    }
+    expect(
+      screen.getByRole("link", { name: /^projects$/ })
+    ).toBeInTheDocument();
   });
 
   it("renders VfdGpsClockFile when hash points to it", async () => {

@@ -9,18 +9,7 @@ describe("HeaderBar", () => {
     expect(screen.getByText("1")).toBeInTheDocument();
   });
 
-  it("renders all two void declarations as links", () => {
-    render(<HeaderBar />);
-    const labels = ["projects", "links"];
-    for (const label of labels) {
-      const link = screen.getByRole("link", { name: new RegExp(`^${label}$`) });
-      expect(link).toHaveAttribute("href", `#L-${label}`);
-    }
-  });
-
-  it("renders an anchor href that points to L-projects", () => {
-    // jsdom does not implement navigation on link click, so we verify the
-    // anchor href instead. The browser handles the hash update natively.
+  it("renders the projects void declaration as a link", () => {
     render(<HeaderBar />);
     const link = screen.getByRole("link", { name: /^projects$/ });
     expect(link).toHaveAttribute("href", "#L-projects");
