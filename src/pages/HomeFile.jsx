@@ -49,7 +49,7 @@ export default function HomeFile() {
           {"  "}<Token kind="ty">Status</Token>{"      "}
           <Token kind="nm">status</Token>{" = { "}
           <Token kind="st">"Tokyo Institute of Technology"</Token>{", "}
-          <Token kind="ty">Grade</Token>{"::"}<Token kind="nm">M1</Token>
+          <Token kind="ty">Grade</Token>{"::"}<Token kind="nm">M2</Token>
           {" };"}
         </Line>
         <Line n={10}>
