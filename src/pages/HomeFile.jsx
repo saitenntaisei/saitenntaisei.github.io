@@ -123,8 +123,8 @@ export default function HomeFile() {
         </Line>
         <Line n={32}>
           {"  "}
-          <a href="#/projects/nixied-clock" className="hover:underline">
-            <Token kind="nm">nixied_clock</Token>
+          <a href="#/projects/nixie-clock" className="hover:underline">
+            <Token kind="nm">nixie_clock</Token>
           </a>
           ,
         </Line>

@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import { getRouteFromHash } from "./route.js";
 import HomeFile from "./pages/HomeFile.jsx";
 import VfdGpsClockFile from "./pages/VfdGpsClockFile.jsx";
-import NixiedClockFile from "./pages/NixiedClockFile.jsx";
+import NixieClockFile from "./pages/NixieClockFile.jsx";
 import ProjectHeaderFile from "./pages/ProjectHeaderFile.jsx";
 
 const PROJECT_PAGES = {
   "vfd-gps-clock": VfdGpsClockFile,
-  "nixied-clock":  NixiedClockFile,
+  "nixie-clock":   NixieClockFile,
 };
 
 function ProjectByName({ slug }) {

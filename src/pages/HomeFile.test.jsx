@@ -31,8 +31,8 @@ describe("HomeFile", () => {
       screen.getByRole("link", { name: /vfd_gps_clock/ })
     ).toHaveAttribute("href", "#/projects/vfd-gps-clock");
     expect(
-      screen.getByRole("link", { name: /nixied_clock/ })
-    ).toHaveAttribute("href", "#/projects/nixied-clock");
+      screen.getByRole("link", { name: /nixie_clock/ })
+    ).toHaveAttribute("href", "#/projects/nixie-clock");
   });
 
   it("renders the footer with social links", () => {

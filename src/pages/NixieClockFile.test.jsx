@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import NixiedClockFile from "./NixiedClockFile.jsx";
+import NixieClockFile from "./NixieClockFile.jsx";
 
-describe("NixiedClockFile", () => {
+describe("NixieClockFile", () => {
   it("renders the project title and repo links", () => {
-    render(<NixiedClockFile />);
+    render(<NixieClockFile />);
     expect(screen.getByText(/Nixie Tube Clock/)).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /nixiecontrol/ })
@@ -15,7 +15,7 @@ describe("NixiedClockFile", () => {
   });
 
   it("renders the preview video", () => {
-    const { container } = render(<NixiedClockFile />);
+    const { container } = render(<NixieClockFile />);
     const video = container.querySelector("video");
     expect(video).not.toBeNull();
     expect(video.querySelector("source")?.src ?? video.src).toMatch(/nixie\.mp4$/);

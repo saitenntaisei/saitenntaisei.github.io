@@ -22,9 +22,9 @@ describe("App", () => {
     expect(await screen.findByText(/VFD Tube GPS Clock/)).toBeInTheDocument();
   });
 
-  it("renders NixiedClockFile when hash points to it", async () => {
+  it("renders NixieClockFile when hash points to it", async () => {
     render(<App />);
-    window.location.hash = "#/projects/nixied-clock";
+    window.location.hash = "#/projects/nixie-clock";
     window.dispatchEvent(new HashChangeEvent("hashchange"));
     expect(await screen.findByText(/Nixie Tube Clock/)).toBeInTheDocument();
   });

@@ -4,7 +4,7 @@ import Line from "../code/Line.jsx";
 import Token from "../code/Token.jsx";
 import Footer from "../code/Footer.jsx";
 
-export default function NixiedClockFile() {
+export default function NixieClockFile() {
   return (
     <CodeShell
       footer={<Footer />}
@@ -24,22 +24,22 @@ export default function NixiedClockFile() {
       <div className="px-4 py-4">
         <Line n={1}>
           <Token kind="ty">PersonalProject</Token>{" "}
-          <Token kind="nm">nixied_clock</Token>{" = {};"}
+          <Token kind="nm">nixie_clock</Token>{" = {};"}
         </Line>
         <Line n={2}>
-          <Token kind="nm">nixied_clock</Token>.<Token kind="nm">title</Token>
+          <Token kind="nm">nixie_clock</Token>.<Token kind="nm">title</Token>
           {"    = "}
           <Token kind="st">"Nixie Tube Clock"</Token>;
         </Line>
         <Line n={3}>
-          <Token kind="nm">nixied_clock</Token>.<Token kind="nm">stack</Token>
+          <Token kind="nm">nixie_clock</Token>.<Token kind="nm">stack</Token>
           {"    = {"}
           <Token kind="ty">Hardware</Token>::<Token kind="nm">NIXIE_TUBE</Token>{", "}
           <Token kind="ty">Lang</Token>::<Token kind="nm">{"C++"}</Token>
           {"};"}
         </Line>
         <Line n={4}>
-          <Token kind="nm">nixied_clock</Token>.<Token kind="nm">software</Token>
+          <Token kind="nm">nixie_clock</Token>.<Token kind="nm">software</Token>
           {" = "}
           <a
             href="https://github.com/saitenntaisei/nixiecontrol"
@@ -52,7 +52,7 @@ export default function NixiedClockFile() {
           ;
         </Line>
         <Line n={5}>
-          <Token kind="nm">nixied_clock</Token>.<Token kind="nm">hardware</Token>
+          <Token kind="nm">nixie_clock</Token>.<Token kind="nm">hardware</Token>
           {" = "}
           <a
             href="https://github.com/saitenntaisei/nixie9v"
