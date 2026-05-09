@@ -9,7 +9,7 @@ export default function NixiedClockFile() {
     <CodeShell
       footer={<Footer />}
       hero={
-        <div className="px-4 py-6 flex justify-center">
+        <div className="px-4 pb-6 flex justify-center">
           <video
             src="/material/nixie.mp4"
             className="w-full max-w-md rounded-lg border border-[#30363d]"

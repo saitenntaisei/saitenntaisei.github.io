@@ -14,7 +14,7 @@ export default function CodeShell({ children, hero, footer }) {
   return (
     <div className="min-h-screen bg-[#0d1117] text-[#c9d1d9] font-mono">
       <div style={HAZARD_BG}>
-        <div className="max-w-4xl mx-auto pb-8">
+        <div className="max-w-4xl mx-auto py-8">
           {hero}
           <div className="bg-[#0d1117] border border-[#30363d] rounded-lg">
             {children}
