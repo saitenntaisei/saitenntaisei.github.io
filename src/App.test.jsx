@@ -29,9 +29,12 @@ describe("App", () => {
     expect(await screen.findByText(/Nixie Tube Clock/)).toBeInTheDocument();
   });
 
-  it("provides L-projects anchor on the home page", () => {
+  it("falls back to HomeFile when an unknown project slug is given", () => {
+    window.location.hash = "#/projects/does-not-exist";
     render(<App />);
-    expect(document.getElementById("L-projects")).not.toBeNull();
+    expect(
+      screen.getByRole("link", { name: /project\.hpp/ })
+    ).toBeInTheDocument();
   });
 
   it("renders ProjectHeaderFile when hash is #/projects", async () => {

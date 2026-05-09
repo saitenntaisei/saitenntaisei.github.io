@@ -116,7 +116,7 @@ export default function HomeFile() {
         <Line n={30} />
 
         {/* projects */}
-        <Line n={31} id="L-projects">
+        <Line n={31}>
           <Token kind="ty">std::vector</Token>{"<"}
           <Token kind="ty">Project::PersonalProject</Token>{"> "}
           <Token kind="nm">personalProjects</Token>{" = {"}

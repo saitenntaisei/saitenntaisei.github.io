@@ -18,13 +18,6 @@ describe("HomeFile", () => {
     expect(screen.getByText(/Rogy/)).toBeInTheDocument();
   });
 
-  it("provides scroll anchors for each header destination", () => {
-    render(<HomeFile />);
-    for (const id of ["L-projects"]) {
-      expect(document.getElementById(id)).not.toBeNull();
-    }
-  });
-
   it("links to each project detail page", () => {
     render(<HomeFile />);
     expect(

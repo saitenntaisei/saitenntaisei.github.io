@@ -8,5 +8,3 @@ export const TOKEN_CLASS = {
   pp: "text-[#ff7b72]",
   default: "text-[#c9d1d9]",
 };
-
-export const KINDS = Object.keys(TOKEN_CLASS).filter((k) => k !== "default");

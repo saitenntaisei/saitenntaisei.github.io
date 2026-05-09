@@ -12,6 +12,7 @@ export default function NixieClockFile() {
         <div className="px-4 pb-6 flex justify-center">
           <video
             src="/material/nixie.mp4"
+            aria-label="Nixie tube clock demo"
             className="w-full max-w-md rounded-lg border border-[#30363d]"
             autoPlay
             loop
@@ -44,7 +45,7 @@ export default function NixieClockFile() {
           <a
             href="https://github.com/saitenntaisei/nixiecontrol"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hover:underline"
           >
             <Token kind="st">"https://github.com/saitenntaisei/nixiecontrol"</Token>
@@ -57,7 +58,7 @@ export default function NixieClockFile() {
           <a
             href="https://github.com/saitenntaisei/nixie9v"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hover:underline"
           >
             <Token kind="st">"https://github.com/saitenntaisei/nixie9v"</Token>

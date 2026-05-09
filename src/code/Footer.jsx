@@ -8,14 +8,14 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#30363d] py-8 px-4 flex flex-col items-center gap-3 font-mono text-[12px] text-[#6e7681]">
+    <footer className="border-t border-[#30363d] py-8 px-4 flex flex-col items-center gap-3 font-mono text-[12px] text-[#8b949e]">
       <div className="flex items-center gap-5">
         {SOCIALS.map((s) => (
           <a
             key={s.href}
             href={s.href}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label={s.label}
             className="opacity-80 hover:opacity-100 transition-opacity"
           >

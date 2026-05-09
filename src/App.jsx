@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useEffect, useState } from "react";
 import { getRouteFromHash } from "./route.js";
 import HomeFile from "./pages/HomeFile.jsx";
