@@ -8,9 +8,9 @@ describe("App", () => {
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   });
 
-  it("renders HomeFile by default with all five header links", () => {
+  it("renders HomeFile by default with all four header links", () => {
     render(<App />);
-    for (const name of ["about", "skills", "history", "projects", "links"]) {
+    for (const name of ["about", "history", "projects", "links"]) {
       expect(
         screen.getByRole("link", { name: new RegExp(`^${name}$`) })
       ).toBeInTheDocument();

@@ -4,13 +4,6 @@ import HeaderBar from "../code/HeaderBar.jsx";
 import Line from "../code/Line.jsx";
 import Token from "../code/Token.jsx";
 
-const SKILL_LOGOS = [
-  { label: "C++", src: "/logo/C++.png" },
-  { label: "Python", src: "/logo/Python.png" },
-  { label: "Rust", src: "/logo/Rust.png" },
-  { label: "Go", src: "/logo/Golang.png" },
-];
-
 const HISTORY = [
   { company: "pixiv",    period: "2022.4 — 2022.10" },
   { company: "DeNA",     period: "2023.9 (3 days)"  },
@@ -119,70 +112,48 @@ export default function HomeFile() {
         <Line n={30}>{"}"}</Line>
         <Line n={31} />
 
-        {/* skills */}
-        <Line n={32} id="L-skills">
-          <Token kind="kw">void</Token>{" "}
-          <Token kind="fn">skills</Token>(){" {"}
-        </Line>
-        <Line n={33}>
-          {"  "}<Token kind="cm">{"// logos for enum class Skill"}</Token>
-        </Line>
-        <div className="pl-12 py-2 flex gap-4 flex-wrap">
-          {SKILL_LOGOS.map((s) => (
-            <img
-              key={s.label}
-              src={s.src}
-              alt={`${s.label} logo`}
-              className="w-20 h-20 object-contain"
-              loading="lazy"
-            />
-          ))}
-        </div>
-        <Line n={34}>{"}"}</Line>
-        <Line n={35} />
-
         {/* history */}
-        <Line n={36} id="L-history">
+        <Line n={32} id="L-history">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">history</Token>(){" {"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={37 + i}>
+          <Line key={row.company} n={33 + i}>
             {"  "}
             <Token kind="cm">{`// ${row.company}: ${row.period}`}</Token>
           </Line>
         ))}
-        <Line n={42}>{"}"}</Line>
-        <Line n={43} />
+        <Line n={38}>{"}"}</Line>
+        <Line n={39} />
 
         {/* projects */}
-        <Line n={44} id="L-projects">
+        <Line n={40} id="L-projects">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">projects</Token>(){" {"}
         </Line>
-        <Line n={45}>
+        <Line n={41}>
           {"  "}
           <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="fn">vfd_gps_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={46}>
+        <Line n={42}>
           {"  "}
           <a href="#/projects/nixied-clock" className="hover:underline">
             <Token kind="fn">nixied_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={47}>{"}"}</Line>
-        <Line n={48} />
+        <Line n={43}>{"}"}</Line>
+        <Line n={44} />
 
         {/* links */}
-        <Line n={49} id="L-links">
+        <Line n={45} id="L-links">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">links</Token>(){" {"}
         </Line>
-        <Line n={50}>
+        <Line n={46}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://twitter.com/saitenntaisei"
@@ -195,7 +166,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={51}>
+        <Line n={47}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://github.com/saitenntaisei"
@@ -207,7 +178,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={52}>
+        <Line n={48}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://qiita.com/saitenntaisei"
@@ -220,7 +191,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={53}>{"}"}</Line>
+        <Line n={49}>{"}"}</Line>
       </div>
     </CodeShell>
   );

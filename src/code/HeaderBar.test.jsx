@@ -9,9 +9,9 @@ describe("HeaderBar", () => {
     expect(screen.getByText("1")).toBeInTheDocument();
   });
 
-  it("renders all five void declarations as links", () => {
+  it("renders all four void declarations as links", () => {
     render(<HeaderBar />);
-    const labels = ["about", "skills", "history", "projects", "links"];
+    const labels = ["about", "history", "projects", "links"];
     for (const label of labels) {
       const link = screen.getByRole("link", { name: new RegExp(`^${label}$`) });
       expect(link).toHaveAttribute("href", `#L-${label}`);
