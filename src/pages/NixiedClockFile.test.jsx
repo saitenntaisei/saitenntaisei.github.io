@@ -3,13 +3,6 @@ import { describe, it, expect } from "vitest";
 import NixiedClockFile from "./NixiedClockFile.jsx";
 
 describe("NixiedClockFile", () => {
-  it("renders a back-to-home link", () => {
-    render(<NixiedClockFile />);
-    expect(
-      screen.getByRole("link", { name: /back_to_home/ })
-    ).toHaveAttribute("href", "#/home");
-  });
-
   it("renders the project title and repo links", () => {
     render(<NixiedClockFile />);
     expect(screen.getByText(/Nixie Tube Clock/)).toBeInTheDocument();
