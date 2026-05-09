@@ -10,15 +10,17 @@ export default function NixieClockFile() {
       footer={<Footer />}
       hero={
         <div className="px-4 pb-6 flex justify-center">
-          <video
-            src="/material/nixie.mp4"
-            aria-label="Nixie tube clock demo"
-            className="w-full max-w-md rounded-lg border border-[#30363d]"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+          <div className="relative w-72 h-96 sm:w-96 sm:h-[32rem]">
+            <video
+              src="/material/nixie.mp4"
+              aria-label="Nixie tube clock demo"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 h-full max-w-none rounded-lg border border-[#30363d]"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </div>
         </div>
       }
     >
