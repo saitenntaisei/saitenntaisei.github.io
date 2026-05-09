@@ -8,10 +8,10 @@ describe("App", () => {
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   });
 
-  it("renders HomeFile by default with the projects header link", () => {
+  it("renders HomeFile by default with the projects #include link", () => {
     render(<App />);
     expect(
-      screen.getByRole("link", { name: /^projects$/ })
+      screen.getByRole("link", { name: /projects\.hpp/ })
     ).toBeInTheDocument();
   });
 

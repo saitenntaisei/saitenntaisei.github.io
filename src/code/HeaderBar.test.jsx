@@ -9,9 +9,9 @@ describe("HeaderBar", () => {
     expect(screen.getByText("1")).toBeInTheDocument();
   });
 
-  it("renders the projects void declaration as a link", () => {
+  it("renders an #include directive linking to the projects anchor", () => {
     render(<HeaderBar />);
-    const link = screen.getByRole("link", { name: /^projects$/ });
+    const link = screen.getByRole("link", { name: /projects\.hpp/ });
     expect(link).toHaveAttribute("href", "#L-projects");
   });
 });

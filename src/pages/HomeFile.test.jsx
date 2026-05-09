@@ -3,10 +3,10 @@ import { describe, it, expect } from "vitest";
 import HomeFile from "./HomeFile.jsx";
 
 describe("HomeFile", () => {
-  it("renders the sticky header bar with the projects link", () => {
+  it("renders the sticky header bar with an #include linking to projects", () => {
     render(<HomeFile />);
     expect(
-      screen.getByRole("link", { name: /^projects$/ })
+      screen.getByRole("link", { name: /projects\.hpp/ })
     ).toHaveAttribute("href", "#L-projects");
   });
 
