@@ -6,15 +6,19 @@ import Footer from "../code/Footer.jsx";
 
 export default function VfdGpsClockFile() {
   return (
-    <CodeShell footer={<Footer />}>
-      <div className="px-4 pt-6 pb-4 flex justify-center">
-        <img
-          src="/material/vfd.jpg"
-          alt="VFD Tube GPS Clock"
-          className="w-full max-w-2xl rounded-lg border border-[#30363d]"
-        />
-      </div>
-      <div className="px-4 pb-4">
+    <CodeShell
+      footer={<Footer />}
+      hero={
+        <div className="px-4 py-6 flex justify-center">
+          <img
+            src="/material/vfd.jpg"
+            alt="VFD Tube GPS Clock"
+            className="w-full max-w-2xl rounded-lg border border-[#30363d]"
+          />
+        </div>
+      }
+    >
+      <div className="px-4 py-4">
         <Line n={1}>
           <Token kind="ty">PersonalProject</Token>{" "}
           <Token kind="nm">vfd_gps_clock</Token>{" = {};"}

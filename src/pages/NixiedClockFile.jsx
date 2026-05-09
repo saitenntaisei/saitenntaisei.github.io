@@ -6,18 +6,22 @@ import Footer from "../code/Footer.jsx";
 
 export default function NixiedClockFile() {
   return (
-    <CodeShell footer={<Footer />}>
-      <div className="px-4 pt-6 pb-4 flex justify-center">
-        <video
-          src="/material/nixie.mp4"
-          className="w-full max-w-md rounded-lg border border-[#30363d]"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-      </div>
-      <div className="px-4 pb-4">
+    <CodeShell
+      footer={<Footer />}
+      hero={
+        <div className="px-4 py-6 flex justify-center">
+          <video
+            src="/material/nixie.mp4"
+            className="w-full max-w-md rounded-lg border border-[#30363d]"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
+      }
+    >
+      <div className="px-4 py-4">
         <Line n={1}>
           <Token kind="ty">PersonalProject</Token>{" "}
           <Token kind="nm">nixied_clock</Token>{" = {};"}
