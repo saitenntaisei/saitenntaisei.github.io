@@ -80,7 +80,7 @@ export default function HomeFile() {
         </Line>
         <Line n={19}>
           {"  "}<Token kind="ty">std::chrono::year_month</Token>{" "}
-          <Token kind="nm">startDate</Token>;
+          <Token kind="nm">start_date</Token>;
         </Line>
         <Line n={20}>
           {"  "}<Token kind="ty">std::chrono::days</Token>{"       "}
