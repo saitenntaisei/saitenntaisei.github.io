@@ -13,7 +13,7 @@ This is a Vite + React personal portfolio site (user GitHub Pages: `saitenntaise
 - `npm test -- -t "renders HomeFile"` — run a single test by name
 - `npm run build` — production build (writes to `docs/`, not `dist/`)
 - `npm run preview` — serve the built `docs/` on port 4173
-- `npm run deploy` — `npm run build` + commits `docs/` and `git push origin master` (see "Deploy branch caveat")
+- `npm run deploy` — `npm run build` + commits `docs/` and `git push origin main` (GitHub Pages publishes from `main` `/docs`)
 
 ## Architecture
 
@@ -38,10 +38,6 @@ This is a Vite + React personal portfolio site (user GitHub Pages: `saitenntaise
 ## Build output goes to `docs/` (not `dist/`)
 
 `vite.config.js` sets `outDir: 'docs'` with `emptyOutDir: true` so GitHub Pages can serve the build directly from `docs/` on the publish branch. **Do not hand-edit files in `docs/`** — they are regenerated on every build, including `CNAME` (which is sourced from `public/CNAME`).
-
-## Deploy branch caveat
-
-The `deploy` npm script pushes to `origin master`, but the local repo's default branch is `main`. Before running `npm run deploy`, confirm with the user which branch GitHub Pages is actually publishing from; if it has been migrated to `main`, the script needs updating rather than blindly invoking.
 
 ## Tailwind content globs
 
