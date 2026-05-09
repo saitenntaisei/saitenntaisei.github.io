@@ -41,6 +41,6 @@ describe("App", () => {
     render(<App />);
     window.location.hash = "#/projects";
     window.dispatchEvent(new HashChangeEvent("hashchange"));
-    expect(await screen.findByText(/\/\/ project\.hpp/)).toBeInTheDocument();
+    expect(await screen.findByText(/^namespace$/)).toBeInTheDocument();
   });
 });

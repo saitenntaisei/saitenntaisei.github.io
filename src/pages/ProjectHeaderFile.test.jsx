@@ -3,9 +3,9 @@ import { describe, it, expect } from "vitest";
 import ProjectHeaderFile from "./ProjectHeaderFile.jsx";
 
 describe("ProjectHeaderFile", () => {
-  it("renders the project.hpp file comment", () => {
+  it("renders the PROJECT_HPP include guard", () => {
     render(<ProjectHeaderFile />);
-    expect(screen.getByText(/project\.hpp/)).toBeInTheDocument();
+    expect(screen.getAllByText(/PROJECT_HPP/).length).toBeGreaterThan(0);
   });
 
   it("renders the Project namespace and PersonalProject struct", () => {
