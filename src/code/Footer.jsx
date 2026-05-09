@@ -1,9 +1,9 @@
 import React from "react";
 
 const SOCIALS = [
-  { href: "https://twitter.com/saitenntaisei", label: "X / Twitter", src: "/x.png" },
-  { href: "https://github.com/saitenntaisei",  label: "GitHub",      src: "/github.png" },
-  { href: "https://qiita.com/saitenntaisei",   label: "Qiita",       src: "/qiita.png" },
+  { href: "https://twitter.com/saitenntaisei", label: "X / Twitter", src: "/x.png",      invert: true },
+  { href: "https://github.com/saitenntaisei",  label: "GitHub",      src: "/github.png", invert: true },
+  { href: "https://qiita.com/saitenntaisei",   label: "Qiita",       src: "/qiita.png",  invert: false },
 ];
 
 export default function Footer() {
@@ -17,9 +17,13 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             aria-label={s.label}
-            className="opacity-70 hover:opacity-100 transition-opacity"
+            className="opacity-80 hover:opacity-100 transition-opacity"
           >
-            <img src={s.src} alt="" className="w-5 h-5 object-contain" />
+            <img
+              src={s.src}
+              alt=""
+              className={`w-6 h-6 object-contain ${s.invert ? "invert" : ""}`}
+            />
           </a>
         ))}
       </div>
