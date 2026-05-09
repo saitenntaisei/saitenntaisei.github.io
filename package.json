@@ -12,7 +12,7 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "test": "vitest",
-    "deploy": "npm run build && git add docs && git commit -m ':rocket: Deploy' && git push origin master"
+    "deploy": "npm run build && git add docs && git commit -m ':rocket: Deploy' && git push origin main"
   },
   "browserslist": {
     "production": [

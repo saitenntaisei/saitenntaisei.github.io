@@ -1,33 +1,46 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import App from "./App.jsx";
 
 describe("App", () => {
-  it("renders portfolio header", () => {
+  beforeEach(() => {
+    window.location.hash = "";
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+  });
+
+  it("renders HomeFile by default with the projects #include link", () => {
     render(<App />);
     expect(
-      screen.getByText(/This is saiten's Portfolio/i)
+      screen.getByRole("link", { name: /project\.hpp/ })
     ).toBeInTheDocument();
   });
 
-  it("navigates to Personal Project via hamburger menu", async () => {
+  it("renders VfdGpsClockFile when hash points to it", async () => {
     render(<App />);
-
-    // Open the menu
-    const openBtns = screen.getAllByRole("button", { name: /open menu/i });
-    openBtns[0].click();
-
-    // Click the Personal Project link
-    const links = screen.getAllByRole("link", { name: /personal project/i });
-    links[0].click();
-
-    // Dispatch hashchange so the app updates route state
+    window.location.hash = "#/projects/vfd-gps-clock";
     window.dispatchEvent(new HashChangeEvent("hashchange"));
+    expect(await screen.findByText(/VFD Tube GPS Clock/)).toBeInTheDocument();
+  });
 
-    // Expect the Personal Projects heading to be visible
-    const headings = await screen.findAllByRole("heading", {
-      name: /personal projects/i,
-    });
-    expect(headings.length).toBeGreaterThan(0);
+  it("renders NixieClockFile when hash points to it", async () => {
+    render(<App />);
+    window.location.hash = "#/projects/nixie-clock";
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    expect(await screen.findByText(/Nixie Tube Clock/)).toBeInTheDocument();
+  });
+
+  it("falls back to HomeFile when an unknown project slug is given", () => {
+    window.location.hash = "#/projects/does-not-exist";
+    render(<App />);
+    expect(
+      screen.getByRole("link", { name: /project\.hpp/ })
+    ).toBeInTheDocument();
+  });
+
+  it("renders ProjectHeaderFile when hash is #/projects", async () => {
+    render(<App />);
+    window.location.hash = "#/projects";
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    expect(await screen.findByText(/^namespace$/)).toBeInTheDocument();
   });
 });
