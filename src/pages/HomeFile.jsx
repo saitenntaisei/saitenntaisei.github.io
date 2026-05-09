@@ -24,56 +24,56 @@ export default function HomeFile() {
     <CodeShell>
       <HeaderBar />
       <div className="px-4 py-4">
-        <Line n={2}><Token kind="cm">{"// portfolio.cpp"}</Token></Line>
-        <Line n={3}><Token kind="pp">#pragma once</Token></Line>
-        <Line n={4}>
+        <Line n={3}><Token kind="cm">{"// portfolio.cpp"}</Token></Line>
+        <Line n={4}><Token kind="pp">#pragma once</Token></Line>
+        <Line n={5}>
           <Token kind="pp">#include</Token>{" "}
           <Token kind="st">{"<string>"}</Token>
         </Line>
-        <Line n={5} />
+        <Line n={6} />
 
-        <Line n={6}>
+        <Line n={7}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Profile</Token>{" {"}
         </Line>
-        <Line n={7}>
+        <Line n={8}>
           {"  "}<Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">name</Token>{" = "}
           <Token kind="st">"saiten"</Token>;
         </Line>
-        <Line n={8}>
+        <Line n={9}>
           {"  "}<Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">univ</Token>{" = "}
           <Token kind="st">"Tokyo Institute of Technology"</Token>;
         </Line>
-        <Line n={9}>
+        <Line n={10}>
           {"  "}<Token kind="ty">int</Token>{"         "}
           <Token kind="nm">grade</Token>{" = "}
           <Token kind="st">1</Token>;{" "}<Token kind="cm">{"// M1"}</Token>
         </Line>
-        <Line n={10}>
+        <Line n={11}>
           {"  "}<Token kind="ty">Affiliation</Token>{" "}
           <Token kind="nm">affiliations</Token>[] = {"{"}
         </Line>
-        <Line n={11}>
+        <Line n={12}>
           {"    "}<Token kind="st">"デジタル創作同好会 traP"</Token>,
         </Line>
-        <Line n={12}>
+        <Line n={13}>
           {"    "}<Token kind="st">"ロボット技術研究会 Rogy"</Token>,
         </Line>
-        <Line n={13}>{"  "}{"};"}</Line>
-        <Line n={14}>{"};"}</Line>
-        <Line n={15} />
+        <Line n={14}>{"  "}{"};"}</Line>
+        <Line n={15}>{"};"}</Line>
+        <Line n={16} />
 
-        <Line n={16}>
+        <Line n={17}>
           <Token kind="kw">enum class</Token>{" "}
           <Token kind="ty">Skill</Token>{" { "}
           <Token kind="nm">Cpp</Token>, <Token kind="nm">Python</Token>,{" "}
           <Token kind="nm">Rust</Token>, <Token kind="nm">Go</Token>{" };"}
         </Line>
-        <Line n={17} />
+        <Line n={18} />
 
-        <Line n={18}>
+        <Line n={19}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Internship</Token>{" { "}
           <Token kind="ty">std::string</Token>{" "}
@@ -81,32 +81,32 @@ export default function HomeFile() {
           <Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">period</Token>;{" };"}
         </Line>
-        <Line n={19}>
+        <Line n={20}>
           <Token kind="kw">static const</Token>{" "}
           <Token kind="ty">Internship</Token>{" "}
           <Token kind="nm">history</Token>[] = {"{"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={20 + i}>
+          <Line key={row.company} n={21 + i}>
             {"  { "}
             <Token kind="st">{`"${row.company}"`}</Token>,{" "}
             <Token kind="st">{`"${row.period}"`}</Token>
             {" },"}
           </Line>
         ))}
-        <Line n={25}>{"};"}</Line>
-        <Line n={26} />
+        <Line n={26}>{"};"}</Line>
+        <Line n={27} />
 
         {/* about */}
-        <Line n={27} id="L-about">
+        <Line n={28} id="L-about">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">about</Token>(){" {"}
         </Line>
-        <Line n={28}>
+        <Line n={29}>
           {"  "}<Token kind="ty">Profile</Token>{" "}
           <Token kind="nm">self</Token>;
         </Line>
-        <Line n={29}>
+        <Line n={30}>
           {"  "}<Token kind="cm">{"// (image: /saiten.png)"}</Token>
         </Line>
         <div className="pl-12 py-2">
@@ -116,15 +116,15 @@ export default function HomeFile() {
             className="w-40 h-40 rounded-full object-cover"
           />
         </div>
-        <Line n={30}>{"}"}</Line>
-        <Line n={31} />
+        <Line n={31}>{"}"}</Line>
+        <Line n={32} />
 
         {/* skills */}
-        <Line n={32} id="L-skills">
+        <Line n={33} id="L-skills">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">skills</Token>(){" {"}
         </Line>
-        <Line n={33}>
+        <Line n={34}>
           {"  "}<Token kind="cm">{"// logos for enum class Skill"}</Token>
         </Line>
         <div className="pl-12 py-2 flex gap-4 flex-wrap">
@@ -138,51 +138,51 @@ export default function HomeFile() {
             />
           ))}
         </div>
-        <Line n={34}>{"}"}</Line>
-        <Line n={35} />
+        <Line n={35}>{"}"}</Line>
+        <Line n={36} />
 
         {/* history */}
-        <Line n={36} id="L-history">
+        <Line n={37} id="L-history">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">history</Token>(){" {"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={37 + i}>
+          <Line key={row.company} n={38 + i}>
             {"  "}
             <Token kind="cm">{`// ${row.company}: ${row.period}`}</Token>
           </Line>
         ))}
-        <Line n={42}>{"}"}</Line>
-        <Line n={43} />
+        <Line n={43}>{"}"}</Line>
+        <Line n={44} />
 
         {/* projects */}
-        <Line n={44} id="L-projects">
+        <Line n={45} id="L-projects">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">projects</Token>(){" {"}
         </Line>
-        <Line n={45}>
+        <Line n={46}>
           {"  "}
           <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="fn">vfd_gps_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={46}>
+        <Line n={47}>
           {"  "}
           <a href="#/projects/nixied-clock" className="hover:underline">
             <Token kind="fn">nixied_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={47}>{"}"}</Line>
-        <Line n={48} />
+        <Line n={48}>{"}"}</Line>
+        <Line n={49} />
 
         {/* links */}
-        <Line n={49} id="L-links">
+        <Line n={50} id="L-links">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">links</Token>(){" {"}
         </Line>
-        <Line n={50}>
+        <Line n={51}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://twitter.com/saitenntaisei"
@@ -195,7 +195,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={51}>
+        <Line n={52}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://github.com/saitenntaisei"
@@ -207,7 +207,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={52}>
+        <Line n={53}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://qiita.com/saitenntaisei"
@@ -220,7 +220,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={53}>{"}"}</Line>
+        <Line n={54}>{"}"}</Line>
       </div>
     </CodeShell>
   );
