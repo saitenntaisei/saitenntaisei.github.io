@@ -8,9 +8,9 @@ describe("App", () => {
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   });
 
-  it("renders HomeFile by default with all four header links", () => {
+  it("renders HomeFile by default with all three header links", () => {
     render(<App />);
-    for (const name of ["about", "history", "projects", "links"]) {
+    for (const name of ["history", "projects", "links"]) {
       expect(
         screen.getByRole("link", { name: new RegExp(`^${name}$`) })
       ).toBeInTheDocument();
@@ -31,9 +31,9 @@ describe("App", () => {
     expect(await screen.findByText(/Nixie Tube Clock/)).toBeInTheDocument();
   });
 
-  it("provides L-about anchor on the home page", () => {
+  it("provides L-history anchor on the home page", () => {
     render(<App />);
-    expect(document.getElementById("L-about")).not.toBeNull();
+    expect(document.getElementById("L-history")).not.toBeNull();
   });
 
   it("legacy #/projects scrolls to the projects function on the home page", () => {

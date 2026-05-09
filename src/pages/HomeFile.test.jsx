@@ -3,9 +3,9 @@ import { describe, it, expect } from "vitest";
 import HomeFile from "./HomeFile.jsx";
 
 describe("HomeFile", () => {
-  it("renders the sticky header bar with four void links", () => {
+  it("renders the sticky header bar with three void links", () => {
     render(<HomeFile />);
-    for (const name of ["about", "history", "projects", "links"]) {
+    for (const name of ["history", "projects", "links"]) {
       expect(
         screen.getByRole("link", { name: new RegExp(`^${name}$`) })
       ).toHaveAttribute("href", `#L-${name}`);
@@ -22,7 +22,7 @@ describe("HomeFile", () => {
 
   it("provides scroll anchors for each header destination", () => {
     render(<HomeFile />);
-    for (const id of ["L-about", "L-history", "L-projects", "L-links"]) {
+    for (const id of ["L-history", "L-projects", "L-links"]) {
       expect(document.getElementById(id)).not.toBeNull();
     }
   });
