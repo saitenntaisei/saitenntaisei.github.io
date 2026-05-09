@@ -6,11 +6,11 @@ import Token from "../code/Token.jsx";
 import Footer from "../code/Footer.jsx";
 
 const HISTORY = [
-  { company: "pixiv",    period: "2022.4 — 2022.10" },
-  { company: "DeNA",     period: "2023.9 (3 days)"  },
-  { company: "Wantedly", period: "2023.9 (3 weeks)" },
-  { company: "FixStars", period: "2025.3 (3 weeks)" },
-  { company: "M3",       period: "2025.8 (2 weeks)" },
+  { company: "pixiv",    start: { y: 2022, m: 4 }, dur: { unit: "Months", n: 6 } },
+  { company: "DeNA",     start: { y: 2023, m: 9 }, dur: { unit: "Days",   n: 3 } },
+  { company: "Wantedly", start: { y: 2023, m: 9 }, dur: { unit: "Weeks",  n: 3 } },
+  { company: "FixStars", start: { y: 2025, m: 3 }, dur: { unit: "Weeks",  n: 3 } },
+  { company: "M3",       start: { y: 2025, m: 8 }, dur: { unit: "Weeks",  n: 2 } },
 ];
 
 export default function HomeFile() {
@@ -69,8 +69,10 @@ export default function HomeFile() {
           <Token kind="ty">Internship</Token>{" { "}
           <Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">company</Token>;{" "}
-          <Token kind="ty">std::string</Token>{" "}
-          <Token kind="nm">period</Token>;{" };"}
+          <Token kind="ty">YearMonth</Token>{" "}
+          <Token kind="nm">startDate</Token>;{" "}
+          <Token kind="ty">Duration</Token>{" "}
+          <Token kind="nm">duration</Token>;{" };"}
         </Line>
         <Line n={18}>
           <Token kind="kw">static const</Token>{" "}
@@ -81,7 +83,8 @@ export default function HomeFile() {
           <Line key={row.company} n={19 + i}>
             {"  { "}
             <Token kind="st">{`"${row.company}"`}</Token>,{" "}
-            <Token kind="st">{`"${row.period}"`}</Token>
+            {`{${row.start.y}, ${row.start.m}}`},{" "}
+            <Token kind="ty">{row.dur.unit}</Token>{`{${row.dur.n}}`}
             {" },"}
           </Line>
         ))}
