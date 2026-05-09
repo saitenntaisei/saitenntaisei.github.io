@@ -119,15 +119,15 @@ export default function HomeFile() {
         </Line>
         <Line n={31}>
           {"  "}
-          <a href="#/projects/vfd-gps-clock" className="hover:underline">
-            <Token kind="nm">vfd_gps_clock</Token>
+          <a href="#/projects/nixied-clock" className="hover:underline">
+            <Token kind="nm">nixied_clock</Token>
           </a>
           ,
         </Line>
         <Line n={32}>
           {"  "}
-          <a href="#/projects/nixied-clock" className="hover:underline">
-            <Token kind="nm">nixied_clock</Token>
+          <a href="#/projects/vfd-gps-clock" className="hover:underline">
+            <Token kind="nm">vfd_gps_clock</Token>
           </a>
           ,
         </Line>
