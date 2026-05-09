@@ -15,7 +15,7 @@ const HISTORY = [
 
 export default function HomeFile() {
   return (
-    <CodeShell>
+    <CodeShell footer={<Footer />}>
       <HeaderBar />
       <div className="px-4 pb-4">
         <Line n={2}><Token kind="cm">{"// portfolio.cpp"}</Token></Line>
@@ -109,7 +109,6 @@ export default function HomeFile() {
         </Line>
         <Line n={29}>{"}"}</Line>
       </div>
-      <Footer />
     </CodeShell>
   );
 }

@@ -7,7 +7,7 @@ import Footer from "../code/Footer.jsx";
 
 export default function VfdGpsClockFile() {
   return (
-    <CodeShell>
+    <CodeShell footer={<Footer />}>
       <StickyHeader>
         <Token kind="kw">void</Token>{" "}
         <a href="#/home" className="hover:underline">
@@ -76,7 +76,6 @@ export default function VfdGpsClockFile() {
         </Line>
         <Line n={13}>{"}"}</Line>
       </div>
-      <Footer />
     </CodeShell>
   );
 }

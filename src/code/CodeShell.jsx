@@ -10,12 +10,15 @@ const HAZARD_BG = {
   )`,
 };
 
-export default function CodeShell({ children }) {
+export default function CodeShell({ children, footer }) {
   return (
-    <div className="min-h-screen text-[#c9d1d9] font-mono" style={HAZARD_BG}>
-      <div className="max-w-4xl mx-auto bg-[#0d1117] min-h-screen border-x border-[#30363d]">
-        {children}
+    <div className="bg-[#0d1117] text-[#c9d1d9] font-mono">
+      <div style={HAZARD_BG}>
+        <div className="max-w-4xl mx-auto bg-[#0d1117] min-h-screen border-x border-[#30363d]">
+          {children}
+        </div>
       </div>
+      {footer}
     </div>
   );
 }

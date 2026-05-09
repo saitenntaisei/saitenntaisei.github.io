@@ -7,7 +7,7 @@ import Footer from "../code/Footer.jsx";
 
 export default function NixiedClockFile() {
   return (
-    <CodeShell>
+    <CodeShell footer={<Footer />}>
       <StickyHeader>
         <Token kind="kw">void</Token>{" "}
         <a href="#/home" className="hover:underline">
@@ -79,7 +79,6 @@ export default function NixiedClockFile() {
         </Line>
         <Line n={13}>{"}"}</Line>
       </div>
-      <Footer />
     </CodeShell>
   );
 }
