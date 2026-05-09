@@ -18,80 +18,78 @@ export default function HomeFile() {
     <CodeShell footer={<Footer />}>
       <HeaderBar />
       <div className="px-4 pb-4">
-        <Line n={2}><Token kind="cm">{"// portfolio.cpp"}</Token></Line>
-        <Line n={3}><Token kind="pp">#pragma once</Token></Line>
-        <Line n={4}>
+        <Line n={2}>
           <Token kind="pp">#include</Token>{" "}
           <Token kind="st">{"<chrono>"}</Token>
         </Line>
-        <Line n={5}>
+        <Line n={3}>
           <Token kind="pp">#include</Token>{" "}
           <Token kind="st">{"<string>"}</Token>
         </Line>
-        <Line n={6} />
+        <Line n={4} />
 
-        <Line n={7}>
+        <Line n={5}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Profile</Token>{" {"}
         </Line>
-        <Line n={8}>
+        <Line n={6}>
           {"  "}<Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">name</Token>{" = "}
           <Token kind="st">"saiten"</Token>;
         </Line>
-        <Line n={9}>
+        <Line n={7}>
           {"  "}<Token kind="ty">Status</Token>{"      "}
           <Token kind="nm">status</Token>{" = { "}
           <Token kind="st">"Tokyo Institute of Technology"</Token>{", "}
           <Token kind="ty">Grade</Token>{"::"}<Token kind="nm">M1</Token>
           {" };"}
         </Line>
-        <Line n={10}>
+        <Line n={8}>
           {"  "}<Token kind="ty">Affiliation</Token>{" "}
           <Token kind="nm">affiliations</Token>[] = {"{"}
         </Line>
-        <Line n={11}>
+        <Line n={9}>
           {"    "}<Token kind="st">"デジタル創作同好会 traP"</Token>,
         </Line>
-        <Line n={12}>
+        <Line n={10}>
           {"    "}<Token kind="st">"ロボット技術研究会 Rogy"</Token>,
         </Line>
-        <Line n={13}>{"  "}{"};"}</Line>
-        <Line n={14}>{"};"}</Line>
-        <Line n={15} />
+        <Line n={11}>{"  "}{"};"}</Line>
+        <Line n={12}>{"};"}</Line>
+        <Line n={13} />
 
-        <Line n={16}>
+        <Line n={14}>
           <Token kind="kw">enum class</Token>{" "}
           <Token kind="ty">Skill</Token>{" { "}
           <Token kind="nm">Cpp</Token>, <Token kind="nm">Python</Token>,{" "}
           <Token kind="nm">Rust</Token>, <Token kind="nm">Go</Token>{" };"}
         </Line>
-        <Line n={17} />
+        <Line n={15} />
 
-        <Line n={18}>
+        <Line n={16}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Internship</Token>{" {"}
         </Line>
-        <Line n={19}>
+        <Line n={17}>
           {"  "}<Token kind="ty">std::string</Token>{"             "}
           <Token kind="nm">company</Token>;
         </Line>
-        <Line n={20}>
+        <Line n={18}>
           {"  "}<Token kind="ty">std::chrono::year_month</Token>{" "}
           <Token kind="nm">startDate</Token>;
         </Line>
-        <Line n={21}>
+        <Line n={19}>
           {"  "}<Token kind="ty">std::chrono::days</Token>{"       "}
           <Token kind="nm">duration</Token>;
         </Line>
-        <Line n={22}>{"};"}</Line>
-        <Line n={23}>
+        <Line n={20}>{"};"}</Line>
+        <Line n={21}>
           <Token kind="kw">static const</Token>{" "}
           <Token kind="ty">Internship</Token>{" "}
           <Token kind="nm">history</Token>[] = {"{"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={24 + i}>
+          <Line key={row.company} n={22 + i}>
             {"  { "}
             <Token kind="st">{`"${row.company}"`}</Token>,{" "}
             <Token kind="ty">std::chrono::year</Token>{`{${row.year}}/`}
@@ -100,29 +98,29 @@ export default function HomeFile() {
             {" },"}
           </Line>
         ))}
-        <Line n={29}>{"};"}</Line>
-        <Line n={30} />
+        <Line n={27}>{"};"}</Line>
+        <Line n={28} />
 
         {/* projects */}
-        <Line n={31} id="L-projects">
+        <Line n={29} id="L-projects">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">projects</Token>(){" {"}
         </Line>
-        <Line n={32}>
+        <Line n={30}>
           {"  "}
           <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="fn">vfd_gps_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={33}>
+        <Line n={31}>
           {"  "}
           <a href="#/projects/nixied-clock" className="hover:underline">
             <Token kind="fn">nixied_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={34}>{"}"}</Line>
+        <Line n={32}>{"}"}</Line>
       </div>
     </CodeShell>
   );
