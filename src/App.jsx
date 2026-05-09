@@ -4,6 +4,7 @@ import { getRouteFromHash } from "./route.js";
 import HomeFile from "./pages/HomeFile.jsx";
 import VfdGpsClockFile from "./pages/VfdGpsClockFile.jsx";
 import NixiedClockFile from "./pages/NixiedClockFile.jsx";
+import ProjectHeaderFile from "./pages/ProjectHeaderFile.jsx";
 
 const PROJECT_PAGES = {
   "vfd-gps-clock": VfdGpsClockFile,
@@ -35,6 +36,9 @@ export default function App() {
 
   if (route.name === "project") {
     return <ProjectByName slug={route.params.slug} />;
+  }
+  if (route.name === "project_header") {
+    return <ProjectHeaderFile />;
   }
   return <HomeFile />;
 }

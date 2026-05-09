@@ -7,7 +7,7 @@ describe("HomeFile", () => {
     render(<HomeFile />);
     expect(
       screen.getByRole("link", { name: /project\.hpp/ })
-    ).toHaveAttribute("href", "#L-projects");
+    ).toHaveAttribute("href", "#/projects");
   });
 
   it("renders profile struct fields", () => {

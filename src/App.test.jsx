@@ -34,10 +34,10 @@ describe("App", () => {
     expect(document.getElementById("L-projects")).not.toBeNull();
   });
 
-  it("legacy #/projects scrolls to the projects function on the home page", () => {
+  it("renders ProjectHeaderFile when hash is #/projects", async () => {
     render(<App />);
     window.location.hash = "#/projects";
     window.dispatchEvent(new HashChangeEvent("hashchange"));
-    expect(document.getElementById("L-projects")).not.toBeNull();
+    expect(await screen.findByText(/\/\/ project\.hpp/)).toBeInTheDocument();
   });
 });

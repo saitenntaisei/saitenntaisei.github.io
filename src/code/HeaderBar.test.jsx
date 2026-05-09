@@ -12,6 +12,6 @@ describe("HeaderBar", () => {
   it("renders an #include directive linking to the projects anchor", () => {
     render(<HeaderBar />);
     const link = screen.getByRole("link", { name: /project\.hpp/ });
-    expect(link).toHaveAttribute("href", "#L-projects");
+    expect(link).toHaveAttribute("href", "#/projects");
   });
 });

@@ -11,7 +11,7 @@ export function getRouteFromHash(hash = window.location.hash) {
   }
 
   if (raw === "/projects") {
-    return { name: "home", params: {}, anchor: "L-projects" };
+    return { name: "project_header", params: {}, anchor: null };
   }
 
   return { name: "home", params: {}, anchor: null };
