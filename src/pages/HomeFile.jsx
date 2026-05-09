@@ -144,26 +144,11 @@ export default function HomeFile() {
           <Token kind="fn">main</Token>(){" {"}
         </Line>
         <Line n={37}>
-          {"  "}<Token kind="ty">Profile</Token>{" "}
-          <Token kind="nm">self</Token>;
-        </Line>
-        <Line n={38}>
           {"  "}<Token kind="ty">std::cout</Token>{" << "}
-          <Token kind="nm">self</Token>{"             << "}
-          <Token kind="st">{'"\\n"'}</Token>
+          <Token kind="st">"Pride Comes Before the Fall"</Token>{" << "}
+          <Token kind="ty">std::endl</Token>;
         </Line>
-        <Line n={39}>
-          {"            << "}<Token kind="nm">skill</Token>
-          {"            << "}<Token kind="st">{'"\\n"'}</Token>
-        </Line>
-        <Line n={40}>
-          {"            << "}<Token kind="nm">history</Token>
-          {"          << "}<Token kind="st">{'"\\n"'}</Token>
-        </Line>
-        <Line n={41}>
-          {"            << "}<Token kind="nm">personalProjects</Token>;
-        </Line>
-        <Line n={42}>{"}"}</Line>
+        <Line n={38}>{"}"}</Line>
       </div>
     </CodeShell>
   );
