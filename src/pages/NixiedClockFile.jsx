@@ -35,7 +35,7 @@ export default function NixiedClockFile() {
           <Token kind="nm">nixied_clock</Token>.<Token kind="nm">stack</Token>
           {"    = {"}
           <Token kind="ty">Hardware</Token>::<Token kind="nm">NIXIE_TUBE</Token>{", "}
-          <Token kind="ty">Lang</Token>::<Token kind="nm">Rust</Token>
+          <Token kind="ty">Lang</Token>::<Token kind="nm">{"C++"}</Token>
           {"};"}
         </Line>
         <Line n={4}>

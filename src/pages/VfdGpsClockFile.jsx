@@ -34,7 +34,7 @@ export default function VfdGpsClockFile() {
           <Token kind="ty">Hardware</Token>::<Token kind="nm">VFD_TUBE</Token>{", "}
           <Token kind="ty">Hardware</Token>::<Token kind="nm">RP2040</Token>{", "}
           <Token kind="ty">Hardware</Token>::<Token kind="nm">GPS</Token>{", "}
-          <Token kind="ty">Lang</Token>::<Token kind="nm">{"C++"}</Token>
+          <Token kind="ty">Lang</Token>::<Token kind="nm">Rust</Token>
           {"};"}
         </Line>
         <Line n={4}>
