@@ -35,38 +35,35 @@ export default function HomeFile() {
           <Token kind="st">"saiten"</Token>;
         </Line>
         <Line n={8}>
-          {"  "}<Token kind="ty">std::string</Token>{" "}
-          <Token kind="nm">univ</Token>{" = "}
-          <Token kind="st">"Tokyo Institute of Technology"</Token>;
+          {"  "}<Token kind="ty">Status</Token>{"      "}
+          <Token kind="nm">status</Token>{" = { "}
+          <Token kind="st">"Tokyo Institute of Technology"</Token>{", "}
+          <Token kind="ty">Grade</Token>{"::"}<Token kind="nm">M1</Token>
+          {" };"}
         </Line>
         <Line n={9}>
-          {"  "}<Token kind="ty">int</Token>{"         "}
-          <Token kind="nm">grade</Token>{" = "}
-          <Token kind="st">1</Token>;{" "}<Token kind="cm">{"// M1"}</Token>
-        </Line>
-        <Line n={10}>
           {"  "}<Token kind="ty">Affiliation</Token>{" "}
           <Token kind="nm">affiliations</Token>[] = {"{"}
         </Line>
-        <Line n={11}>
+        <Line n={10}>
           {"    "}<Token kind="st">"デジタル創作同好会 traP"</Token>,
         </Line>
-        <Line n={12}>
+        <Line n={11}>
           {"    "}<Token kind="st">"ロボット技術研究会 Rogy"</Token>,
         </Line>
-        <Line n={13}>{"  "}{"};"}</Line>
-        <Line n={14}>{"};"}</Line>
-        <Line n={15} />
+        <Line n={12}>{"  "}{"};"}</Line>
+        <Line n={13}>{"};"}</Line>
+        <Line n={14} />
 
-        <Line n={16}>
+        <Line n={15}>
           <Token kind="kw">enum class</Token>{" "}
           <Token kind="ty">Skill</Token>{" { "}
           <Token kind="nm">Cpp</Token>, <Token kind="nm">Python</Token>,{" "}
           <Token kind="nm">Rust</Token>, <Token kind="nm">Go</Token>{" };"}
         </Line>
-        <Line n={17} />
+        <Line n={16} />
 
-        <Line n={18}>
+        <Line n={17}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Internship</Token>{" { "}
           <Token kind="ty">std::string</Token>{" "}
@@ -74,32 +71,32 @@ export default function HomeFile() {
           <Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">period</Token>;{" };"}
         </Line>
-        <Line n={19}>
+        <Line n={18}>
           <Token kind="kw">static const</Token>{" "}
           <Token kind="ty">Internship</Token>{" "}
           <Token kind="nm">history</Token>[] = {"{"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={20 + i}>
+          <Line key={row.company} n={19 + i}>
             {"  { "}
             <Token kind="st">{`"${row.company}"`}</Token>,{" "}
             <Token kind="st">{`"${row.period}"`}</Token>
             {" },"}
           </Line>
         ))}
-        <Line n={25}>{"};"}</Line>
-        <Line n={26} />
+        <Line n={24}>{"};"}</Line>
+        <Line n={25} />
 
         {/* about */}
-        <Line n={27} id="L-about">
+        <Line n={26} id="L-about">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">about</Token>(){" {"}
         </Line>
-        <Line n={28}>
+        <Line n={27}>
           {"  "}<Token kind="ty">Profile</Token>{" "}
           <Token kind="nm">self</Token>;
         </Line>
-        <Line n={29}>
+        <Line n={28}>
           {"  "}<Token kind="cm">{"// (image: /saiten.png)"}</Token>
         </Line>
         <div className="pl-12 py-2">
@@ -109,51 +106,51 @@ export default function HomeFile() {
             className="w-40 h-40 rounded-full object-cover"
           />
         </div>
-        <Line n={30}>{"}"}</Line>
-        <Line n={31} />
+        <Line n={29}>{"}"}</Line>
+        <Line n={30} />
 
         {/* history */}
-        <Line n={32} id="L-history">
+        <Line n={31} id="L-history">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">history</Token>(){" {"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={33 + i}>
+          <Line key={row.company} n={32 + i}>
             {"  "}
             <Token kind="cm">{`// ${row.company}: ${row.period}`}</Token>
           </Line>
         ))}
-        <Line n={38}>{"}"}</Line>
-        <Line n={39} />
+        <Line n={37}>{"}"}</Line>
+        <Line n={38} />
 
         {/* projects */}
-        <Line n={40} id="L-projects">
+        <Line n={39} id="L-projects">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">projects</Token>(){" {"}
         </Line>
-        <Line n={41}>
+        <Line n={40}>
           {"  "}
           <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="fn">vfd_gps_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={42}>
+        <Line n={41}>
           {"  "}
           <a href="#/projects/nixied-clock" className="hover:underline">
             <Token kind="fn">nixied_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={43}>{"}"}</Line>
-        <Line n={44} />
+        <Line n={42}>{"}"}</Line>
+        <Line n={43} />
 
         {/* links */}
-        <Line n={45} id="L-links">
+        <Line n={44} id="L-links">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">links</Token>(){" {"}
         </Line>
-        <Line n={46}>
+        <Line n={45}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://twitter.com/saitenntaisei"
@@ -166,7 +163,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={47}>
+        <Line n={46}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://github.com/saitenntaisei"
@@ -178,7 +175,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={48}>
+        <Line n={47}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://qiita.com/saitenntaisei"
@@ -191,7 +188,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={49}>{"}"}</Line>
+        <Line n={48}>{"}"}</Line>
       </div>
     </CodeShell>
   );
