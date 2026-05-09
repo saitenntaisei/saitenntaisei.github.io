@@ -12,6 +12,22 @@ const HISTORY = [
   { company: "M3",       period: "2025.8 (2 weeks)" },
 ];
 
+// ASCII rendering of public/saiten.png — kept here so the file's
+// "header banner" feels like a real source-file header comment.
+// Sized 44x9 (after blank-row trim) so the 7px×28px char cell renders
+// the original square glyph at a ~1:1 visual aspect ratio.
+const ASCII_ART = [
+  " *              .::::::::...      :-",
+  " *             :=:.. .....:--------.",
+  " *           -----------+*:::---------:",
+  " *                       +%",
+  " *             ---------%@=---------.",
+  " *                    :**=#-",
+  " *                 .:++:  .=+=:.",
+  " *             :----:.       .:-=--::",
+  " *             .                   ..",
+];
+
 export default function HomeFile() {
   return (
     <CodeShell>
@@ -25,45 +41,54 @@ export default function HomeFile() {
         </Line>
         <Line n={5} />
 
-        <Line n={6}>
+        <Line n={6}><Token kind="cm">/*</Token></Line>
+        {ASCII_ART.map((row, i) => (
+          <Line key={i} n={7 + i}>
+            <Token kind="cm">{row}</Token>
+          </Line>
+        ))}
+        <Line n={16}><Token kind="cm">{" */"}</Token></Line>
+        <Line n={17} />
+
+        <Line n={18}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Profile</Token>{" {"}
         </Line>
-        <Line n={7}>
+        <Line n={19}>
           {"  "}<Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">name</Token>{" = "}
           <Token kind="st">"saiten"</Token>;
         </Line>
-        <Line n={8}>
+        <Line n={20}>
           {"  "}<Token kind="ty">Status</Token>{"      "}
           <Token kind="nm">status</Token>{" = { "}
           <Token kind="st">"Tokyo Institute of Technology"</Token>{", "}
           <Token kind="ty">Grade</Token>{"::"}<Token kind="nm">M1</Token>
           {" };"}
         </Line>
-        <Line n={9}>
+        <Line n={21}>
           {"  "}<Token kind="ty">Affiliation</Token>{" "}
           <Token kind="nm">affiliations</Token>[] = {"{"}
         </Line>
-        <Line n={10}>
+        <Line n={22}>
           {"    "}<Token kind="st">"デジタル創作同好会 traP"</Token>,
         </Line>
-        <Line n={11}>
+        <Line n={23}>
           {"    "}<Token kind="st">"ロボット技術研究会 Rogy"</Token>,
         </Line>
-        <Line n={12}>{"  "}{"};"}</Line>
-        <Line n={13}>{"};"}</Line>
-        <Line n={14} />
+        <Line n={24}>{"  "}{"};"}</Line>
+        <Line n={25}>{"};"}</Line>
+        <Line n={26} />
 
-        <Line n={15}>
+        <Line n={27}>
           <Token kind="kw">enum class</Token>{" "}
           <Token kind="ty">Skill</Token>{" { "}
           <Token kind="nm">Cpp</Token>, <Token kind="nm">Python</Token>,{" "}
           <Token kind="nm">Rust</Token>, <Token kind="nm">Go</Token>{" };"}
         </Line>
-        <Line n={16} />
+        <Line n={28} />
 
-        <Line n={17}>
+        <Line n={29}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Internship</Token>{" { "}
           <Token kind="ty">std::string</Token>{" "}
@@ -71,86 +96,76 @@ export default function HomeFile() {
           <Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">period</Token>;{" };"}
         </Line>
-        <Line n={18}>
+        <Line n={30}>
           <Token kind="kw">static const</Token>{" "}
           <Token kind="ty">Internship</Token>{" "}
           <Token kind="nm">history</Token>[] = {"{"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={19 + i}>
+          <Line key={row.company} n={31 + i}>
             {"  { "}
             <Token kind="st">{`"${row.company}"`}</Token>,{" "}
             <Token kind="st">{`"${row.period}"`}</Token>
             {" },"}
           </Line>
         ))}
-        <Line n={24}>{"};"}</Line>
-        <Line n={25} />
+        <Line n={36}>{"};"}</Line>
+        <Line n={37} />
 
         {/* about */}
-        <Line n={26} id="L-about">
+        <Line n={38} id="L-about">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">about</Token>(){" {"}
         </Line>
-        <Line n={27}>
+        <Line n={39}>
           {"  "}<Token kind="ty">Profile</Token>{" "}
           <Token kind="nm">self</Token>;
         </Line>
-        <Line n={28}>
-          {"  "}<Token kind="cm">{"// (image: /saiten.png)"}</Token>
-        </Line>
-        <div className="pl-12 py-2">
-          <img
-            src="/saiten.png"
-            alt="saiten"
-            className="w-40 h-40 rounded-full object-cover"
-          />
-        </div>
-        <Line n={29}>{"}"}</Line>
-        <Line n={30} />
+        <Line n={40}>{"}"}</Line>
+        <Line n={41} />
 
         {/* history */}
-        <Line n={31} id="L-history">
+        <Line n={42} id="L-history">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">history</Token>(){" {"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={32 + i}>
+          <Line key={row.company} n={43 + i}>
             {"  "}
             <Token kind="cm">{`// ${row.company}: ${row.period}`}</Token>
           </Line>
         ))}
-        <Line n={37}>{"}"}</Line>
-        <Line n={38} />
+        <Line n={48}>{"}"}</Line>
+        <Line n={49} />
 
         {/* projects */}
-        <Line n={39} id="L-projects">
+        <Line n={50} id="L-projects">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">projects</Token>(){" {"}
         </Line>
-        <Line n={40}>
+        <Line n={51}>
           {"  "}
           <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="fn">vfd_gps_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={41}>
+        <Line n={52}>
           {"  "}
           <a href="#/projects/nixied-clock" className="hover:underline">
             <Token kind="fn">nixied_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={42}>{"}"}</Line>
-        <Line n={43} />
+        <Line n={53}>{"}"}</Line>
+        <Line n={54} />
 
         {/* links */}
-        <Line n={44} id="L-links">
+        <Line n={55} id="L-links">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">links</Token>(){" {"}
         </Line>
-        <Line n={45}>
+        <Line n={56}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://twitter.com/saitenntaisei"
@@ -163,7 +178,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={46}>
+        <Line n={57}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://github.com/saitenntaisei"
@@ -175,7 +190,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={47}>
+        <Line n={58}>
           {"  "}<Token kind="fn">open</Token>(
           <a
             href="https://qiita.com/saitenntaisei"
@@ -188,7 +203,7 @@ export default function HomeFile() {
           </a>
           );
         </Line>
-        <Line n={48}>{"}"}</Line>
+        <Line n={59}>{"}"}</Line>
       </div>
     </CodeShell>
   );
