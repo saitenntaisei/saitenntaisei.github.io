@@ -6,11 +6,11 @@ import Token from "../code/Token.jsx";
 import Footer from "../code/Footer.jsx";
 
 const HISTORY = [
-  { company: "pixiv",    start: { y: 2022, m: 4 }, dur: { unit: "Months", n: 6 } },
-  { company: "DeNA",     start: { y: 2023, m: 9 }, dur: { unit: "Days",   n: 3 } },
-  { company: "Wantedly", start: { y: 2023, m: 9 }, dur: { unit: "Weeks",  n: 3 } },
-  { company: "FixStars", start: { y: 2025, m: 3 }, dur: { unit: "Weeks",  n: 3 } },
-  { company: "M3",       start: { y: 2025, m: 8 }, dur: { unit: "Weeks",  n: 2 } },
+  { company: "pixiv",    year: 2022, month: "April",     dur: { unit: "weeks", n: 26 } },
+  { company: "DeNA",     year: 2023, month: "September", dur: { unit: "days",  n: 3  } },
+  { company: "Wantedly", year: 2023, month: "September", dur: { unit: "weeks", n: 3  } },
+  { company: "FixStars", year: 2025, month: "March",     dur: { unit: "weeks", n: 3  } },
+  { company: "M3",       year: 2025, month: "August",    dur: { unit: "weeks", n: 2  } },
 ];
 
 export default function HomeFile() {
@@ -22,95 +22,108 @@ export default function HomeFile() {
         <Line n={3}><Token kind="pp">#pragma once</Token></Line>
         <Line n={4}>
           <Token kind="pp">#include</Token>{" "}
+          <Token kind="st">{"<chrono>"}</Token>
+        </Line>
+        <Line n={5}>
+          <Token kind="pp">#include</Token>{" "}
           <Token kind="st">{"<string>"}</Token>
         </Line>
-        <Line n={5} />
+        <Line n={6} />
+        <Line n={7}>
+          <Token kind="kw">using namespace</Token>{" "}
+          <Token kind="ty">std::chrono</Token>;
+        </Line>
+        <Line n={8}>
+          <Token kind="kw">using namespace</Token>{" "}
+          <Token kind="ty">std::chrono_literals</Token>;
+        </Line>
+        <Line n={9} />
 
-        <Line n={6}>
+        <Line n={10}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Profile</Token>{" {"}
         </Line>
-        <Line n={7}>
+        <Line n={11}>
           {"  "}<Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">name</Token>{" = "}
           <Token kind="st">"saiten"</Token>;
         </Line>
-        <Line n={8}>
+        <Line n={12}>
           {"  "}<Token kind="ty">Status</Token>{"      "}
           <Token kind="nm">status</Token>{" = { "}
           <Token kind="st">"Tokyo Institute of Technology"</Token>{", "}
           <Token kind="ty">Grade</Token>{"::"}<Token kind="nm">M1</Token>
           {" };"}
         </Line>
-        <Line n={9}>
+        <Line n={13}>
           {"  "}<Token kind="ty">Affiliation</Token>{" "}
           <Token kind="nm">affiliations</Token>[] = {"{"}
         </Line>
-        <Line n={10}>
+        <Line n={14}>
           {"    "}<Token kind="st">"デジタル創作同好会 traP"</Token>,
         </Line>
-        <Line n={11}>
+        <Line n={15}>
           {"    "}<Token kind="st">"ロボット技術研究会 Rogy"</Token>,
         </Line>
-        <Line n={12}>{"  "}{"};"}</Line>
-        <Line n={13}>{"};"}</Line>
-        <Line n={14} />
+        <Line n={16}>{"  "}{"};"}</Line>
+        <Line n={17}>{"};"}</Line>
+        <Line n={18} />
 
-        <Line n={15}>
+        <Line n={19}>
           <Token kind="kw">enum class</Token>{" "}
           <Token kind="ty">Skill</Token>{" { "}
           <Token kind="nm">Cpp</Token>, <Token kind="nm">Python</Token>,{" "}
           <Token kind="nm">Rust</Token>, <Token kind="nm">Go</Token>{" };"}
         </Line>
-        <Line n={16} />
+        <Line n={20} />
 
-        <Line n={17}>
+        <Line n={21}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">Internship</Token>{" { "}
           <Token kind="ty">std::string</Token>{" "}
           <Token kind="nm">company</Token>;{" "}
-          <Token kind="ty">YearMonth</Token>{" "}
+          <Token kind="ty">year_month</Token>{" "}
           <Token kind="nm">startDate</Token>;{" "}
-          <Token kind="ty">Duration</Token>{" "}
+          <Token kind="ty">days</Token>{" "}
           <Token kind="nm">duration</Token>;{" };"}
         </Line>
-        <Line n={18}>
+        <Line n={22}>
           <Token kind="kw">static const</Token>{" "}
           <Token kind="ty">Internship</Token>{" "}
           <Token kind="nm">history</Token>[] = {"{"}
         </Line>
         {HISTORY.map((row, i) => (
-          <Line key={row.company} n={19 + i}>
+          <Line key={row.company} n={23 + i}>
             {"  { "}
             <Token kind="st">{`"${row.company}"`}</Token>,{" "}
-            {`{${row.start.y}, ${row.start.m}}`},{" "}
+            {`${row.year}y/`}<Token kind="nm">{row.month}</Token>,{" "}
             <Token kind="ty">{row.dur.unit}</Token>{`{${row.dur.n}}`}
             {" },"}
           </Line>
         ))}
-        <Line n={24}>{"};"}</Line>
-        <Line n={25} />
+        <Line n={28}>{"};"}</Line>
+        <Line n={29} />
 
         {/* projects */}
-        <Line n={26} id="L-projects">
+        <Line n={30} id="L-projects">
           <Token kind="kw">void</Token>{" "}
           <Token kind="fn">projects</Token>(){" {"}
         </Line>
-        <Line n={27}>
+        <Line n={31}>
           {"  "}
           <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="fn">vfd_gps_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={28}>
+        <Line n={32}>
           {"  "}
           <a href="#/projects/nixied-clock" className="hover:underline">
             <Token kind="fn">nixied_clock</Token>
           </a>
           ();{" "}<Token kind="cm">{"// → detail"}</Token>
         </Line>
-        <Line n={29}>{"}"}</Line>
+        <Line n={33}>{"}"}</Line>
       </div>
     </CodeShell>
   );
