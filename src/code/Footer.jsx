@@ -8,7 +8,7 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#30363d] mt-6 py-8 px-4 flex flex-col items-center gap-3 font-mono text-[12px] text-[#6e7681]">
+    <footer className="border-t border-[#30363d] py-8 px-4 flex flex-col items-center gap-3 font-mono text-[12px] text-[#6e7681]">
       <div className="flex items-center gap-5">
         {SOCIALS.map((s) => (
           <a
