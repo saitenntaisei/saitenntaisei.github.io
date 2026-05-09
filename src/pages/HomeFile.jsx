@@ -69,7 +69,9 @@ export default function HomeFile() {
           <Token kind="ty">Lang</Token>::<Token kind="nm">{"C++"}</Token>,{" "}
           <Token kind="ty">Lang</Token>::<Token kind="nm">Python</Token>,{" "}
           <Token kind="ty">Lang</Token>::<Token kind="nm">Rust</Token>,{" "}
-          <Token kind="ty">Lang</Token>::<Token kind="nm">Go</Token>
+          <Token kind="ty">Lang</Token>::<Token kind="nm">Go</Token>,{" "}
+          <Token kind="ty">Tool</Token>::<Token kind="nm">Kicad</Token>,{" "}
+          <Token kind="ty">Tool</Token>::<Token kind="nm">Inventor</Token>
           {" };"}
         </Line>
         <Line n={16} />
