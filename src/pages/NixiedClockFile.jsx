@@ -33,8 +33,9 @@ export default function NixiedClockFile() {
         </Line>
         <Line n={3}>
           <Token kind="nm">nixied_clock</Token>.<Token kind="nm">stack</Token>
-          {"    = "}
-          <Token kind="st">"Nixie Tube"</Token>;
+          {"    = {"}
+          <Token kind="ty">Hardware</Token>::<Token kind="nm">NIXIE_TUBE</Token>
+          {"};"}
         </Line>
         <Line n={4}>
           <Token kind="nm">nixied_clock</Token>.<Token kind="nm">software</Token>

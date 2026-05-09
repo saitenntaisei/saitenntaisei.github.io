@@ -30,8 +30,11 @@ export default function VfdGpsClockFile() {
         </Line>
         <Line n={3}>
           <Token kind="nm">vfd_gps_clock</Token>.<Token kind="nm">stack</Token>
-          {"    = "}
-          <Token kind="st">"VFD TUBE, RP2040, GPS"</Token>;
+          {"    = {"}
+          <Token kind="ty">Hardware</Token>::<Token kind="nm">VFD_TUBE</Token>{", "}
+          <Token kind="ty">Hardware</Token>::<Token kind="nm">RP2040</Token>{", "}
+          <Token kind="ty">Hardware</Token>::<Token kind="nm">GPS</Token>
+          {"};"}
         </Line>
         <Line n={4}>
           <Token kind="nm">vfd_gps_clock</Token>.<Token kind="nm">software</Token>
