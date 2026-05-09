@@ -16,54 +16,76 @@ export default function ProjectHeaderFile() {
         </Line>
         <Line n={4}>
           <Token kind="pp">#include</Token>{" "}
+          <Token kind="st">{"<variant>"}</Token>
+        </Line>
+        <Line n={5}>
+          <Token kind="pp">#include</Token>{" "}
           <Token kind="st">{"<vector>"}</Token>
         </Line>
-        <Line n={5} />
+        <Line n={6} />
 
-        <Line n={6}>
+        <Line n={7}>
           <Token kind="kw">namespace</Token>{" "}
           <Token kind="ty">Project</Token>{" {"}
         </Line>
-        <Line n={7} />
+        <Line n={8} />
 
-        <Line n={8}>
+        <Line n={9}>
           <Token kind="kw">enum class</Token>{" "}
           <Token kind="ty">Hardware</Token>{" {"}
         </Line>
-        <Line n={9}>{"  "}<Token kind="nm">VFD_TUBE</Token>,</Line>
-        <Line n={10}>{"  "}<Token kind="nm">RP2040</Token>,</Line>
-        <Line n={11}>{"  "}<Token kind="nm">GPS</Token>,</Line>
-        <Line n={12}>{"  "}<Token kind="nm">NIXIE_TUBE</Token>,</Line>
-        <Line n={13}>{"};"}</Line>
-        <Line n={14} />
+        <Line n={10}>{"  "}<Token kind="nm">VFD_TUBE</Token>,</Line>
+        <Line n={11}>{"  "}<Token kind="nm">RP2040</Token>,</Line>
+        <Line n={12}>{"  "}<Token kind="nm">GPS</Token>,</Line>
+        <Line n={13}>{"  "}<Token kind="nm">NIXIE_TUBE</Token>,</Line>
+        <Line n={14}>{"};"}</Line>
+        <Line n={15} />
 
-        <Line n={15}>
+        <Line n={16}>
+          <Token kind="kw">enum class</Token>{" "}
+          <Token kind="ty">Lang</Token>{" {"}
+        </Line>
+        <Line n={17}>{"  "}<Token kind="nm">{"C++"}</Token>,</Line>
+        <Line n={18}>{"  "}<Token kind="nm">Rust</Token>,</Line>
+        <Line n={19}>{"};"}</Line>
+        <Line n={20} />
+
+        <Line n={21}>
+          <Token kind="kw">using</Token>{" "}
+          <Token kind="ty">StackItem</Token>{" = "}
+          <Token kind="ty">std::variant</Token>{"<"}
+          <Token kind="ty">Hardware</Token>, <Token kind="ty">Lang</Token>
+          {">;"}
+        </Line>
+        <Line n={22} />
+
+        <Line n={23}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">PersonalProject</Token>{" {"}
         </Line>
-        <Line n={16}>
-          {"  "}<Token kind="ty">std::string</Token>{"           "}
+        <Line n={24}>
+          {"  "}<Token kind="ty">std::string</Token>{"            "}
           <Token kind="nm">title</Token>;
         </Line>
-        <Line n={17}>
+        <Line n={25}>
           {"  "}<Token kind="ty">std::vector</Token>{"<"}
-          <Token kind="ty">Hardware</Token>{"> "}
+          <Token kind="ty">StackItem</Token>{"> "}
           <Token kind="nm">stack</Token>;
         </Line>
-        <Line n={18}>
-          {"  "}<Token kind="ty">std::string</Token>{"           "}
+        <Line n={26}>
+          {"  "}<Token kind="ty">std::string</Token>{"            "}
           <Token kind="nm">software</Token>;{" "}
           <Token kind="cm">{"// repo URL"}</Token>
         </Line>
-        <Line n={19}>
-          {"  "}<Token kind="ty">std::string</Token>{"           "}
+        <Line n={27}>
+          {"  "}<Token kind="ty">std::string</Token>{"            "}
           <Token kind="nm">hardware</Token>;{" "}
           <Token kind="cm">{"// repo URL"}</Token>
         </Line>
-        <Line n={20}>{"};"}</Line>
-        <Line n={21} />
+        <Line n={28}>{"};"}</Line>
+        <Line n={29} />
 
-        <Line n={22}>
+        <Line n={30}>
           {"} "}<Token kind="cm">{"// namespace Project"}</Token>
         </Line>
       </div>
