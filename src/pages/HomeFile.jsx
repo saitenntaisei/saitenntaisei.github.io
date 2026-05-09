@@ -84,7 +84,7 @@ export default function HomeFile() {
         </Line>
         <Line n={20}>{"};"}</Line>
         <Line n={21}>
-          <Token kind="kw">static const</Token>{" "}
+          <Token kind="kw">constexpr</Token>{" "}
           <Token kind="ty">Internship</Token>{" "}
           <Token kind="nm">history</Token>[] = {"{"}
         </Line>
