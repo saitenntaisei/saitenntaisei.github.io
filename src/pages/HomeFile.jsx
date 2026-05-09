@@ -116,14 +116,14 @@ export default function HomeFile() {
           <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="nm">vfd_gps_clock</Token>
           </a>
-          ,{" "}<Token kind="cm">{"// → detail"}</Token>
+          ,
         </Line>
         <Line n={32}>
           {"  "}
           <a href="#/projects/nixied-clock" className="hover:underline">
             <Token kind="nm">nixied_clock</Token>
           </a>
-          ,{" "}<Token kind="cm">{"// → detail"}</Token>
+          ,
         </Line>
         <Line n={33}>{"};"}</Line>
       </div>
