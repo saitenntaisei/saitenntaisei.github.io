@@ -46,46 +46,53 @@ export default function ProjectHeaderFile() {
           <Token kind="ty">Lang</Token>{" {"}
         </Line>
         <Line n={17}>{"  "}<Token kind="nm">{"C++"}</Token>,</Line>
-        <Line n={18}>{"  "}<Token kind="nm">Rust</Token>,</Line>
-        <Line n={19}>{"};"}</Line>
-        <Line n={20} />
+        <Line n={18}>{"  "}<Token kind="nm">Python</Token>,</Line>
+        <Line n={19}>{"  "}<Token kind="nm">Rust</Token>,</Line>
+        <Line n={20}>{"  "}<Token kind="nm">Go</Token>,</Line>
+        <Line n={21}>{"};"}</Line>
+        <Line n={22}>
+          <Token kind="kw">using</Token>{" "}
+          <Token kind="ty">Skill</Token>{" = "}
+          <Token kind="ty">Lang</Token>;
+        </Line>
+        <Line n={23} />
 
-        <Line n={21}>
+        <Line n={24}>
           <Token kind="kw">using</Token>{" "}
           <Token kind="ty">StackItem</Token>{" = "}
           <Token kind="ty">std::variant</Token>{"<"}
           <Token kind="ty">Hardware</Token>, <Token kind="ty">Lang</Token>
           {">;"}
         </Line>
-        <Line n={22} />
+        <Line n={25} />
 
-        <Line n={23}>
+        <Line n={26}>
           <Token kind="kw">struct</Token>{" "}
           <Token kind="ty">PersonalProject</Token>{" {"}
         </Line>
-        <Line n={24}>
+        <Line n={27}>
           {"  "}<Token kind="ty">std::string</Token>{"            "}
           <Token kind="nm">title</Token>;
         </Line>
-        <Line n={25}>
+        <Line n={28}>
           {"  "}<Token kind="ty">std::vector</Token>{"<"}
           <Token kind="ty">StackItem</Token>{"> "}
           <Token kind="nm">stack</Token>;
         </Line>
-        <Line n={26}>
+        <Line n={29}>
           {"  "}<Token kind="ty">std::string</Token>{"            "}
           <Token kind="nm">software</Token>;{" "}
           <Token kind="cm">{"// repo URL"}</Token>
         </Line>
-        <Line n={27}>
+        <Line n={30}>
           {"  "}<Token kind="ty">std::string</Token>{"            "}
           <Token kind="nm">hardware</Token>;{" "}
           <Token kind="cm">{"// repo URL"}</Token>
         </Line>
-        <Line n={28}>{"};"}</Line>
-        <Line n={29} />
+        <Line n={31}>{"};"}</Line>
+        <Line n={32} />
 
-        <Line n={30}>
+        <Line n={33}>
           {"} "}<Token kind="cm">{"// namespace Project"}</Token>
         </Line>
       </div>

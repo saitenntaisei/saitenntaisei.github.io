@@ -63,10 +63,14 @@ export default function HomeFile() {
         <Line n={14} />
 
         <Line n={15}>
-          <Token kind="kw">enum class</Token>{" "}
-          <Token kind="ty">Skill</Token>{" { "}
-          <Token kind="nm">Cpp</Token>, <Token kind="nm">Python</Token>,{" "}
-          <Token kind="nm">Rust</Token>, <Token kind="nm">Go</Token>{" };"}
+          <Token kind="ty">std::vector</Token>{"<"}
+          <Token kind="ty">Project::Skill</Token>{"> "}
+          <Token kind="nm">skill</Token>{" = { "}
+          <Token kind="ty">Lang</Token>::<Token kind="nm">{"C++"}</Token>,{" "}
+          <Token kind="ty">Lang</Token>::<Token kind="nm">Python</Token>,{" "}
+          <Token kind="ty">Lang</Token>::<Token kind="nm">Rust</Token>,{" "}
+          <Token kind="ty">Lang</Token>::<Token kind="nm">Go</Token>
+          {" };"}
         </Line>
         <Line n={16} />
 
