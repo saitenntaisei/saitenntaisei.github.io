@@ -7,7 +7,7 @@ export default function HeaderBar() {
     <StickyHeader>
       <Token kind="pp">#include</Token>{" "}
       <a href="#L-projects" className="hover:underline">
-        <Token kind="st">"projects.hpp"</Token>
+        <Token kind="st">"project.hpp"</Token>
       </a>
     </StickyHeader>
   );

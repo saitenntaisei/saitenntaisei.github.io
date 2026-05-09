@@ -11,7 +11,7 @@ describe("App", () => {
   it("renders HomeFile by default with the projects #include link", () => {
     render(<App />);
     expect(
-      screen.getByRole("link", { name: /projects\.hpp/ })
+      screen.getByRole("link", { name: /project\.hpp/ })
     ).toBeInTheDocument();
   });
 

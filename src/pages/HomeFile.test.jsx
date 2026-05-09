@@ -6,7 +6,7 @@ describe("HomeFile", () => {
   it("renders the sticky header bar with an #include linking to projects", () => {
     render(<HomeFile />);
     expect(
-      screen.getByRole("link", { name: /projects\.hpp/ })
+      screen.getByRole("link", { name: /project\.hpp/ })
     ).toHaveAttribute("href", "#L-projects");
   });
 
