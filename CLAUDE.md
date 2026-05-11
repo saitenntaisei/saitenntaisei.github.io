@@ -4,6 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Vite + React personal portfolio site (user GitHub Pages: `saitenntaisei.github.io`, custom domain `saiten.cc`). For human-facing contributor guidelines (commit style, PR expectations, coding conventions), read `AGENTS.md` — it is authoritative and not duplicated here.
 
+**Requires Node 20+** (Vite 7). First checkout: `npm install`.
+
 ## Common commands
 
 - `npm run dev` — Vite dev server (defaults to `http://localhost:5173`, falls back to next free port)
@@ -21,7 +23,7 @@ This is a Vite + React personal portfolio site (user GitHub Pages: `saitenntaise
 - **Routing is hash-based and hand-rolled** in `src/route.js`. `getRouteFromHash` returns `{ name, params, anchor }`:
   - `name`: `"home"` (default), `"project"` (detail page), or `"project_header"` (`#/projects` → `ProjectHeaderFile`)
   - `params.slug`: project slug when `name === "project"` (e.g. `"vfd-gps-clock"`, `"nixie-clock"`)
-  - `anchor`: `"L-foo"` for in-page anchors (`#L-about`, `#L-projects`, ...) — App scrolls to that `id` via `useEffect`
+  - `anchor`: `"L-foo"` for in-page anchors. App calls `scrollIntoView` on the matching `id` via `useEffect`; no live page currently exposes one, but the parser still accepts the form so future anchors keep working.
 - **Pages** live in `src/pages/`:
   - `HomeFile.jsx` — single-source-file home (`portfolio.cpp` aesthetic)
   - `ProjectHeaderFile.jsx` — `#/projects`; renders `namespace Project { ... }` (Hardware / Lang / Tool enums, PersonalProject struct)
