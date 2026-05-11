@@ -73,6 +73,7 @@ export default function HomeFile() {
           <Token kind="nm">skill</Token>{" = { "}
           <Token kind="ty">Lang</Token>::<Token kind="nm">{"C++"}</Token>,{" "}
           <Token kind="ty">Lang</Token>::<Token kind="nm">Python</Token>,{" "}
+          <Token kind="ty">Lang</Token>::<Token kind="nm">Matlab</Token>,{" "}
           <Token kind="ty">Lang</Token>::<Token kind="nm">Rust</Token>,{" "}
           <Token kind="ty">Lang</Token>::<Token kind="nm">Go</Token>,{" "}
           <Token kind="ty">Tool</Token>::<Token kind="nm">Kicad</Token>,{" "}
