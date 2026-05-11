@@ -148,7 +148,7 @@ export default function HomeFile() {
         </Line>
         <Line n={37}>
           {"  "}<Token kind="ty">std::cout</Token>{" << "}
-          <Token kind="st">"Pride Comes Before the Fall"</Token>{" << "}
+          <Token kind="st">"Hello World!"</Token>{" << "}
           <Token kind="ty">std::endl</Token>;
         </Line>
         <Line n={38}>{"}"}</Line>
