@@ -4,6 +4,7 @@ import HeaderBar from "../code/HeaderBar.jsx";
 import Line from "../code/Line.jsx";
 import Token from "../code/Token.jsx";
 import Footer from "../code/Footer.jsx";
+import { LANGS, TOOLS } from "../skillData.js";
 
 const HISTORY = [
   { company: "pixiv",    year: 2022, month: "April",     dur: { unit: "weeks", n: 26 } },
@@ -71,13 +72,14 @@ export default function HomeFile() {
           <Token kind="ty">std::vector</Token>{"<"}
           <Token kind="ty">Project::Skill</Token>{"> "}
           <Token kind="nm">skill</Token>{" = { "}
-          <Token kind="ty">Lang</Token>::<Token kind="nm">{"C++"}</Token>,{" "}
-          <Token kind="ty">Lang</Token>::<Token kind="nm">Python</Token>,{" "}
-          <Token kind="ty">Lang</Token>::<Token kind="nm">Matlab</Token>,{" "}
-          <Token kind="ty">Lang</Token>::<Token kind="nm">Rust</Token>,{" "}
-          <Token kind="ty">Lang</Token>::<Token kind="nm">Go</Token>,{" "}
-          <Token kind="ty">Tool</Token>::<Token kind="nm">Kicad</Token>,{" "}
-          <Token kind="ty">Tool</Token>::<Token kind="nm">Inventor</Token>
+          {[...LANGS.map((m) => ["Lang", m]), ...TOOLS.map((m) => ["Tool", m])].map(
+            ([type, member], i, all) => (
+              <React.Fragment key={`${type}-${member}`}>
+                <Token kind="ty">{type}</Token>::<Token kind="nm">{member}</Token>
+                {i < all.length - 1 ? ", " : ""}
+              </React.Fragment>
+            )
+          )}
           {" };"}
         </Line>
         <Line n={17} />
@@ -114,8 +116,8 @@ export default function HomeFile() {
             {" },"}
           </Line>
         ))}
-        <Line n={29}>{"};"}</Line>
-        <Line n={30} />
+        <Line n={24 + HISTORY.length}>{"};"}</Line>
+        <Line n={25 + HISTORY.length} />
 
         {/* projects */}
         <Line n={31}>
