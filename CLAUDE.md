@@ -19,21 +19,34 @@ This is a Vite + React personal portfolio site (user GitHub Pages: `saitenntaise
 
 - **Entry point**: `src/main.jsx` mounts `<App />` into `#root` from `index.html`.
 - **Routing is hash-based and hand-rolled** in `src/route.js`. `getRouteFromHash` returns `{ name, params, anchor }`:
-  - `name`: `"home"` (default) or `"project"`
-  - `params.slug`: project slug when `name === "project"` (e.g. `"vfd-gps-clock"`)
+  - `name`: `"home"` (default), `"project"` (detail page), or `"project_header"` (`#/projects` → `ProjectHeaderFile`)
+  - `params.slug`: project slug when `name === "project"` (e.g. `"vfd-gps-clock"`, `"nixie-clock"`)
   - `anchor`: `"L-foo"` for in-page anchors (`#L-about`, `#L-projects`, ...) — App scrolls to that `id` via `useEffect`
 - **Pages** live in `src/pages/`:
   - `HomeFile.jsx` — single-source-file home (`portfolio.cpp` aesthetic)
-  - `VfdGpsClockFile.jsx` / `NixiedClockFile.jsx` — project detail pages, also code-styled
+  - `ProjectHeaderFile.jsx` — `#/projects`; renders `namespace Project { ... }` (Hardware / Lang / Tool enums, PersonalProject struct)
+  - `VfdGpsClockFile.jsx` / `NixieClockFile.jsx` — project detail pages; hero image/video sits above the rounded code box
 - **Code-style primitives** live in `src/code/`:
   - `Token.jsx` — typed span (`kind="kw|ty|fn|st|cm|nm|pp"`) → GitHub Dark color
   - `tokens.js` — kind → CSS class map
   - `Line.jsx` — gutter line number + content; `id` becomes the scroll anchor target
   - `HeaderBar.jsx` — sticky 1-line nav rendering forward declarations as line `1`
-  - `CodeShell.jsx` — outer dark container
+  - `StickyHeader.jsx` — generic sticky-row helper (line `1`); `HeaderBar` is built on top
+  - `CodeShell.jsx` — outer dark wrapper with hazard-striped flanks + rounded code box; accepts `hero` and `footer` slots
+  - `Footer.jsx` — full-width social-icon + copyright footer (rendered outside the hazard area)
+- **Shared data**: `src/skillData.js` exports `LANGS` / `TOOLS`. `HomeFile` maps over it; `ProjectHeaderFile`'s enum body still hand-mirrors the values — keep them in sync.
 - **Styling**: Tailwind utility classes only. Code-themed pages are dark-only by design (no Tailwind `dark:` toggle on those views).
 - **Static assets** (`/saiten.png`, `/x.png`, `/github.png`, `/logo/*.png`, `/material/*`) live in `public/` and are referenced with absolute root paths in JSX. `vite.config.js` sets `base: '/'` because this is served at the domain root.
 - **Custom domain**: `public/CNAME` contains `saiten.cc` and is copied to `docs/CNAME` on every build.
+
+## Hand-numbered `<Line n={N}>` JSX
+
+Each line in `src/pages/*.jsx` carries a literal `n={N}` prop. Inserting or removing a line cascades through every subsequent number in the file. After non-trivial edits to a page, invoke the `line-renumber-auditor` subagent (`.claude/agents/`) — it grep-walks the sequences and flags gaps / duplicates / non-monotonic runs.
+
+## Code-themed conventions
+
+- The C++ shown in pages is decorative pseudo-code. `Lang::C++`, `void main()` (non-standard return), `struct Internship { ... }`, `Project::PersonalProject` etc. are intentionally non-compilable — do not "fix" non-standard syntax.
+- Every `<a target="_blank">` carries `rel="noopener noreferrer"` (Footer + project repo links).
 
 ## Build output goes to `docs/` (not `dist/`)
 
@@ -52,6 +65,15 @@ Note: `src/code/Token.jsx` uses arbitrary-color classes like `text-[#ff7b72]`. T
 - Tests co-locate next to source as `*.test.jsx` (or `*.test.js` for non-JSX modules like `route.test.js`).
 - Hash-routing tests must dispatch `new HashChangeEvent("hashchange")` after changing `location.hash` to trigger the listener — see `src/App.test.jsx` for the pattern.
 - jsdom does not navigate on `<a>` click. To assert link behavior, check the `href` attribute rather than asserting `window.location.hash` after `fireEvent.click`.
+- For initial-route tests, set `window.location.hash` BEFORE `render(<App />)`. Setting it after triggers a re-mount race that can hand `findByText` a stale detached node.
+- `findByText(/regex/)` matching text present in both pre- and post-render trees may return a stale element. Use a string unique to the target page (e.g. `^namespace$` for `ProjectHeaderFile`).
+
+## Project automation (`.claude/`)
+
+- **Hooks** (`.claude/hooks/`): `PreToolUse` blocks any `Edit`/`Write` to `docs/`; `PostToolUse` runs `vitest related --run <file>` on `src/**/*.jsx` edits.
+- **Skills** (`.claude/skills/`): `visual-smoke` (dev server + Playwright at 1280/375), `deploy-check` (test/build/Pages-source verify before `npm run deploy`).
+- **Subagents** (`.claude/agents/`): `line-renumber-auditor`, `a11y-reviewer`.
+- **MCP** (`.mcp.json`): `context7` for live React / Vite / Tailwind / Vitest docs.
 
 ## Specs and plans
 
