@@ -48,7 +48,7 @@ export default function NixieClockFile() {
             href="https://github.com/saitenntaisei/nixiecontrol"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="hover:underline"
           >
             <Token kind="st">"https://github.com/saitenntaisei/nixiecontrol"</Token>
           </a>
@@ -61,7 +61,7 @@ export default function NixieClockFile() {
             href="https://github.com/saitenntaisei/nixie9v"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="hover:underline"
           >
             <Token kind="st">"https://github.com/saitenntaisei/nixie9v"</Token>
           </a>

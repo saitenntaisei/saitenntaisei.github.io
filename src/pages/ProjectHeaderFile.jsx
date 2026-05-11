@@ -118,7 +118,7 @@ export default function ProjectHeaderFile() {
         <Line n={42}>
           <Token kind="kw">extern</Token>{" "}
           <Token kind="ty">Project::PersonalProject</Token>{" "}
-          <a href="#/projects/nixie-clock" className="underline">
+          <a href="#/projects/nixie-clock" className="hover:underline">
             <Token kind="nm">nixie_clock</Token>
           </a>
           ;
@@ -126,7 +126,7 @@ export default function ProjectHeaderFile() {
         <Line n={43}>
           <Token kind="kw">extern</Token>{" "}
           <Token kind="ty">Project::PersonalProject</Token>{" "}
-          <a href="#/projects/vfd-gps-clock" className="underline">
+          <a href="#/projects/vfd-gps-clock" className="hover:underline">
             <Token kind="nm">vfd_gps_clock</Token>
           </a>
           ;

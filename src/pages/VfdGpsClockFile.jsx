@@ -44,7 +44,7 @@ export default function VfdGpsClockFile() {
             href="https://github.com/saitenntaisei/gps-clock"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="hover:underline"
           >
             <Token kind="st">"https://github.com/saitenntaisei/gps-clock"</Token>
           </a>
@@ -57,7 +57,7 @@ export default function VfdGpsClockFile() {
             href="https://github.com/saitenntaisei/gps-clock-pcb"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="hover:underline"
           >
             <Token kind="st">"https://github.com/saitenntaisei/gps-clock-pcb"</Token>
           </a>
